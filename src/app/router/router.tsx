@@ -1,25 +1,20 @@
 import { Suspense } from "react";
-import { Route, RouteProps, Routes } from "react-router";
+import { Route, Routes } from "react-router";
 
 import LoadingPage from "../../shared/LoadingPage";
 
 import { routes } from "./config";
 
-const AppRouter = () => {
-  const withRouter = (route: RouteProps) => {
-    const element = (
-      <Suspense fallback={<LoadingPage />}>{route.element}</Suspense>
-    );
-    return (
+const AppRouter = () => (
+  <Routes>
+    {Object.values(routes).map((el) => (
       <Route
-        key={route.path}
-        path={route.path}
-        element={element}
+        key={el.path}
+        path={el.path}
+        element={<Suspense fallback={<LoadingPage />}>{el.element}</Suspense>}
       />
-    );
-  };
-
-  return <Routes>{Object.values(routes).map(withRouter)}</Routes>;
-};
+    ))}
+  </Routes>
+);
 
 export default AppRouter;

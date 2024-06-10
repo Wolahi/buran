@@ -123,6 +123,9 @@ p {
         display: none;
       }
     }
+    &-nowrap {
+      white-space: nowrap;
+    }
     &-light {
       font-weight: 300;
     }
