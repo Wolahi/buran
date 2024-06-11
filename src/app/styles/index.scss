@@ -85,12 +85,13 @@ p {
   .inner {
     position: relative;
     width: 100%;
-    max-width: 1220px;
+    max-width: 1520px;
     min-width: 320px;
     margin: 0 auto;
+    padding: 0 var(--inner-pd);
     @include media-tablet {
       max-width: 980px;
-      padding: 0 var(--inner-pd);
+
     }
     @include media-mobile {
       max-width: 100%;
@@ -140,6 +141,9 @@ p {
     }
     &-right {
       text-align: right;
+    }
+    &-underline{
+      text-decoration: underline;
     }
   }
 }

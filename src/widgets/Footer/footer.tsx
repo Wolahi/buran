@@ -1,43 +1,58 @@
-import Style from "./footer.module.scss";
+import style from "./footer.module.scss";
 
 import Tg from "@/assets/footer/tg.svg?react";
 import Vk from "@/assets/footer/vk.svg?react";
 import Youtube from "@/assets/footer/youtube.svg?react";
-import logo from "@/assets/logo.png";
 
 const Footer = () => (
-  <footer className={Style.footer}>
+  <footer className={style.footer}>
     <div className="inner">
-      <div className={Style.footer__content}>
-        <div className={Style.footer__left}>
-          <div className={Style.footer__copyright}>
+      <div className={style.footer__content}>
+        <div className={style.footer__info}>
+          <div className={style.footer__copyright}>
             © Хоккейный клуб «Буран» Воронеж
           </div>
+          <div>
+            Адрес: 394030, г. Воронеж, ул. Карла Маркса, д. 116, ДС "Юбилейный"
+          </div>
+          <div>
+            E-mail:{" "}
+            <a href="mailto:hcvoronezh@mail.ru" className="text-underline">
+              hcvoronezh@mail.ru,
+            </a>{" "}
+            <a
+              href="mailto:anohcburan2017@yandex.ru"
+              className="text-underline"
+            >
+              anohcburan2017@yandex.ru
+            </a>
+          </div>
         </div>
-        <div className={Style.footer__right}>
-          <div className={Style.footer__socialsWrapper}>
-            <div className={Style.footer__socialsText}>
-              Наши социальные сети:
-            </div>
-            <div className={Style.footer__socials}>
+        <div className={style.footer__aside}>
+          <div className={style.footer__socialsWrapper}>
+            <div className={style.footer__socialsText}>Cоциальные сети:</div>
+            <div className={style.footer__socials}>
               <a
-                href="#"
-                className={Style.footer__socialsItem}
+                href="https://www.youtube.com/channel/UCP3u2JvZa24Km-MdmcePJ2A"
+                className={style.footer__socialsItem}
                 target="_blank"
+                rel="noreferrer"
               >
                 <Youtube />
               </a>
               <a
-                href="#"
-                className={Style.footer__socialsItem}
+                href="https://t.me/hcburan1977"
+                className={style.footer__socialsItem}
                 target="_blank"
+                rel="noreferrer"
               >
                 <Tg />
               </a>
               <a
-                href="#"
-                className={Style.footer__socialsItem}
+                href="https://vk.com/hcburan_vrn"
+                className={style.footer__socialsItem}
                 target="_blank"
+                rel="noreferrer"
               >
                 <Vk />
               </a>
