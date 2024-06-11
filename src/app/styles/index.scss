@@ -98,13 +98,13 @@ p {
   }
   main {
     flex: 1 0;
-    // padding: 65px;
-    // @include media-tablet {
-    //   padding: 50px;
-    // }
-    // @include media-mobile {
-    //   padding: 40px;
-    // }
+    padding-top: 65px;
+    @include media-tablet {
+      padding-top: 50px;
+    }
+    @include media-mobile {
+      padding-top: 40px;
+    }
   }
   .section {
     &:not(:first-child) {
@@ -142,9 +142,4 @@ p {
       text-align: right;
     }
   }
-}
-
-.Monserrat {
-  font-family: $font;
-  font-size: 16px;
 }
