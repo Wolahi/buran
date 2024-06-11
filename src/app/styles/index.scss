@@ -85,12 +85,13 @@ p {
   .inner {
     position: relative;
     width: 100%;
-    max-width: 1220px;
+    max-width: 1520px;
     min-width: 320px;
     margin: 0 auto;
+    padding: 0 var(--inner-pd);
     @include media-tablet {
       max-width: 980px;
-      padding: 0 var(--inner-pd);
+
     }
     @include media-mobile {
       max-width: 100%;
@@ -98,13 +99,13 @@ p {
   }
   main {
     flex: 1 0;
-    // padding: 65px;
-    // @include media-tablet {
-    //   padding: 50px;
-    // }
-    // @include media-mobile {
-    //   padding: 40px;
-    // }
+    padding-top: 65px;
+    @include media-tablet {
+      padding-top: 50px;
+    }
+    @include media-mobile {
+      padding-top: 40px;
+    }
   }
   .section {
     &:not(:first-child) {
@@ -141,10 +142,8 @@ p {
     &-right {
       text-align: right;
     }
+    &-underline{
+      text-decoration: underline;
+    }
   }
-}
-
-.Monserrat {
-  font-family: $font;
-  font-size: 16px;
 }
