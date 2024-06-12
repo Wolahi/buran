@@ -19,13 +19,12 @@ const Header = () => (
               alt="Логотип «Буран»"
             />
           </Link>
-
           <nav className={style.header__nav}>
             <div className={style.header__seasons}>
               <DropDown
                 title="Выбор сезона"
                 items={[
-                  { text: "Архив сезонов", link: "/", id: 0 },
+                  { text: "Архив сезонов", link: "#seasonList", id: 0 },
                   { text: "Сезон 2022-2023 гг.", link: "#", id: 1 },
                   { text: "Сезон 2023-2024 гг.", link: "#", id: 2 },
                 ]}
