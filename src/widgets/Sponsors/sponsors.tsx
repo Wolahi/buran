@@ -8,14 +8,38 @@ import CustomTypography from "@/shared/ui/CustomTypography/ui/CustomTypography.t
 
 const Sponsors = () => (
   <div className={style.sponsors}>
-    <div className={style.sponsors__position}>
-      <CustomTypography type="h2" className={style.sponsors__toptext}>
-        ПАРТНЕРЫ ХК "БУРАН"
-      </CustomTypography>
-      <img src={arena} />
-      <img src={negorod} />
-      <img src={bassein} />
-      <img src={tv} />
+    <CustomTypography
+      type="title"
+      className={style.sponsors__head}
+    >
+      ПАРТНЕРЫ ХК "БУРАН"
+    </CustomTypography>
+    <div className={style.sponsors__content}>
+      <div className={style.sponsors__image}>
+        <img
+          src={negorod}
+          alt=""
+        />
+      </div>
+      <div className={style.sponsors__image}>
+        <img
+          src={arena}
+          alt=""
+        />
+      </div>
+
+      <div className={style.sponsors__image}>
+        <img
+          src={tv}
+          alt=""
+        />
+      </div>
+      <div className={style.sponsors__image}>
+        <img
+          src={bassein}
+          alt=""
+        />
+      </div>
     </div>
   </div>
 );

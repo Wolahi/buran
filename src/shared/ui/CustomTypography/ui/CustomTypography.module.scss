@@ -67,20 +67,13 @@
 }
 
 .textM {
-  font-size: 20px;
-  font-weight: normal;
+  font: 400 24px/1.4 $font;
+
+  @include media-tablet {
+    font-size: 20px;
+  }
 
   @include media-mobile {
     font-size: 16px;
-  }
-}
-
-.sectionHead {
-  font: 700 42px/1.3 $font;
-  @include media-tablet {
-    font-size: 36px;
-  }
-  @include media-mobile {
-    font-size: 28px;
   }
 }

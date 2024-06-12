@@ -1,4 +1,5 @@
 import { CustomTypography } from "@/shared/ui/CustomTypography";
+import About from "@/widgets/About/about";
 import SeasonList from "@/widgets/SeasonList/SeasonList";
 
 const Main = () => {
@@ -9,15 +10,21 @@ const Main = () => {
 
   return (
     <div>
+      <section className="section section--bg-white">
+        <div className="inner">
+          <div className="section-head">
+            <CustomTypography type="h2">О нас</CustomTypography>
+          </div>
+          <About />
+        </div>
+      </section>
       <section
         className="section"
         id="sectionSeasons"
       >
         <div className="inner">
           <div className="section-head">
-            <CustomTypography type="sectionHead">
-              Список сезонов
-            </CustomTypography>
+            <CustomTypography type="h2">Список сезонов</CustomTypography>
           </div>
           <SeasonList items={data} />
         </div>

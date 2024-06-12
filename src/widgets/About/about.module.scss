@@ -1,5 +1,13 @@
 @import "@/app/styles/utils/variables";
-.about{
-  display: flex;
-  margin: 10px 60px 20px 30px;
+@import "@/app/styles/utils/media";
+
+.about {
+  display: grid;
+  gap: 24px;
+  @include media-tablet {
+    gap: 20px;
+  }
+  @include media-mobile {
+    gap: 16px;
+  }
 }
