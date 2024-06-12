@@ -1,0 +1,76 @@
+@import "@/app/styles/utils/media";
+@import "@/app/styles/utils/variables";
+
+.typography {
+  font-family: $font;
+  font-weight: normal;
+}
+
+.p {
+  font-size: 16px;
+
+  @include media-mobile{
+    font-size: 14px;
+  }
+}
+
+.h1 {
+  font-weight: bold;
+  font-size: 64px;
+}
+
+.h2 {
+  font-weight: bold;
+  font-size: 48px;
+
+  @include media-mobile{
+    font-size: 36px;
+  }
+}
+
+.h3 {
+  font-weight: bold;
+  font-size: 32px;
+}
+
+.title {
+  font-weight: bold;
+  font-size: 36px;
+
+  @include media-tablet{
+    font-size: 28px;
+  }
+
+  @include media-mobile{
+    font-size: 24px;
+  }
+}
+
+.subtitle {
+  font-size: 12px;
+  font-weight: initial;
+  color: var(--grey-color);
+
+  @include media-mobile{
+    font-size: 10px;
+  }
+}
+
+.description {
+  font-size: 12px;
+  color: var(--grey-color);
+  font-weight: normal;
+
+  @include media-mobile {
+    font-size: 8px;
+  }
+}
+
+.textM {
+  font-size: 20px;
+  font-weight: normal;
+
+  @include media-mobile {
+    font-size: 16px;
+  }
+}
