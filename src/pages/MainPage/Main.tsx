@@ -1,3 +1,4 @@
+import { CustomTypography } from "@/shared/ui/CustomTypography";
 import SeasonList from "@/widgets/SeasonList/SeasonList";
 
 const Main = () => {
@@ -8,47 +9,15 @@ const Main = () => {
 
   return (
     <div>
-      <section className="section">
+      <section
+        className="section"
+        id="sectionSeasons"
+      >
         <div className="inner">
           <div className="section-head">
-            <h2>Список сезонов</h2>
-          </div>
-          <div className="section-head">
-            <h2>Список сезонов</h2>
-          </div>
-          <div className="section-head">
-            <h2>Список сезонов</h2>
-          </div>
-          <div className="section-head">
-            <h2>Список сезонов</h2>
-          </div>
-          <div className="section-head">
-            <h2>Список сезонов</h2>
-          </div>
-          <div className="section-head">
-            <h2>Список сезонов</h2>
-          </div>
-          <div className="section-head">
-            <h2>Список сезонов</h2>
-          </div>
-          <div className="section-head">
-            <h2>Список сезонов</h2>
-          </div>
-          <div className="section-head">
-            <h2>Список сезонов</h2>
-          </div>
-
-          <div className="section-head">
-            <h2>Список сезонов</h2>
-          </div>
-          <div className="section-head">
-            <h2>Список сезонов</h2>
-          </div>
-          <div
-            id="seasonList"
-            className="section-head"
-          >
-            <h2>Список сезонов</h2>
+            <CustomTypography type="sectionHead">
+              Список сезонов
+            </CustomTypography>
           </div>
           <SeasonList items={data} />
         </div>

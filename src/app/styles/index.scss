@@ -133,15 +133,6 @@ p {
       @include media-mobile {
         margin-top: 25px;
       }
-      h2 {
-        font: 700 42px/1.3 $font;
-        @include media-tablet {
-          font-size: 36px;
-        }
-        @include media-mobile {
-          font-size: 28px;
-        }
-      }
     }
   }
   .text {
