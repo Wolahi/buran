@@ -27,3 +27,12 @@
   font-style: normal;
   font-display: swap;
 }
+@font-face {
+  font-family: "Industry";
+  src:
+    url("/fonts/Industry-Bold.woff2") format("woff2"),
+    url("/fonts/Industry-Bold.woff") format("woff");
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
