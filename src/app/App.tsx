@@ -2,7 +2,6 @@ import { useLocation } from "react-router";
 
 import AppRouter from "./router/router";
 
-import About from "@/widgets/About/about.tsx";
 import Footer from "@/widgets/Footer/footer";
 import Header from "@/widgets/Header/Header";
 
@@ -16,7 +15,6 @@ const App = () => {
 
       <main>
         <AppRouter />
-        <About />
       </main>
       {currentLinks.includes(location.pathname) && <Footer />}
     </div>
