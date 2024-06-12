@@ -1,0 +1,21 @@
+@import "@/app/styles/utils/media";
+@import "@/app/styles/utils/variables";
+
+
+.root {
+  display: flex;
+  flex-direction: column;
+  text-align: start;
+  gap: 10px;
+}
+
+.list {
+  display: flex;
+
+  flex-wrap: wrap;
+  gap: 25px;
+
+  @include media-mobile() {
+    justify-content: center;
+  }
+}
