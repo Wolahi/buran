@@ -1,0 +1,13 @@
+@import "@/app/styles/utils/variables";
+@import "@/app/styles/utils/media";
+
+.seasonList {
+  display: grid;
+  gap: 20px;
+  @include media-tablet {
+    gap: 15px;
+  }
+  @include media-mobile {
+    gap: 12px;
+  }
+}
