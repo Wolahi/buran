@@ -25,8 +25,8 @@ const Header = () => (
                 title="Выбор сезона"
                 items={[
                   { text: "Архив сезонов", link: "#sectionSeasons", id: 0 },
-                  { text: "Сезон 2022-2023 гг.", link: "#", id: 1 },
-                  { text: "Сезон 2023-2024 гг.", link: "#", id: 2 },
+                  { text: "Сезон 2022-2023 гг.", link: "/season/1", id: 1 },
+                  { text: "Сезон 2023-2024 гг.", link: "/season/1", id: 2 },
                 ]}
                 mods="white"
               />
