@@ -17,6 +17,7 @@
   opacity: 0;
   transform: translateY(4px) translateX(-50%);
   transition: opacity 0.3s ease;
+  z-index: 2;
   @include media-tablet {
     padding: 20px 25px;
   }
