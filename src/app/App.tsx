@@ -7,12 +7,11 @@ import Header from "@/widgets/Header/Header";
 
 const App = () => {
   const location = useLocation();
-  const currentLinks = ["/", "/main", "/admin", "/commands"];
+  const currentLinks = ["/", "/index", "/admin", "/commands"];
 
   return (
     <div className="app">
       {currentLinks.includes(location.pathname) && <Header />}
-
       <main>
         <AppRouter />
       </main>

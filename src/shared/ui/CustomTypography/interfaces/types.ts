@@ -8,7 +8,8 @@ export type TypographyType =
   | "title"
   | "subtitle"
   | "description"
-  | "textM";
+  | "textM"
+  | "sectionHead";
 
 type TagComponent =
   | "h1"
