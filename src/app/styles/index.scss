@@ -4,7 +4,13 @@
 @import "utils/fonts";
 
 :root {
-  --inner-pd: 10px;
+  --inner-pd: 24px;
+  @include media-tablet {
+    --inner-pd: 16px;
+  }
+  @include media-mobile {
+    --inner-pd: 10px;
+  }
 }
 
 *,
@@ -91,7 +97,6 @@ p {
     padding: 0 var(--inner-pd);
     @include media-tablet {
       max-width: 980px;
-
     }
     @include media-mobile {
       max-width: 100%;
@@ -142,7 +147,7 @@ p {
     &-right {
       text-align: right;
     }
-    &-underline{
+    &-underline {
       text-decoration: underline;
     }
   }

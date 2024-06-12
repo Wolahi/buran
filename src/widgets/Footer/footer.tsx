@@ -13,11 +13,15 @@ const Footer = () => (
             © Хоккейный клуб «Буран» Воронеж
           </div>
           <div>
-            Адрес: 394030, г. Воронеж, ул. Карла Маркса, д. 116, ДС "Юбилейный"
+            Адрес: 394030, г.&nbsp;Воронеж, ул.&nbsp;Карла Маркса, д.&nbsp;116,
+            ДС&nbsp;"Юбилейный"
           </div>
           <div>
             E-mail:{" "}
-            <a href="mailto:hcvoronezh@mail.ru" className="text-underline">
+            <a
+              href="mailto:hcvoronezh@mail.ru"
+              className="text-underline"
+            >
               hcvoronezh@mail.ru,
             </a>{" "}
             <a
