@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import style from "./header.module.scss";
 
 import logo from "@/assets/logo.png";
-import DropDown from "@/shared/DropDown";
+import DropDown from "@/shared/ui/DropDown";
 
 const Header = () => (
   <header className={style.header}>

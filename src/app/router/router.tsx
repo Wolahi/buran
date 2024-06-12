@@ -1,7 +1,7 @@
 import { Suspense } from "react";
 import { Route, Routes } from "react-router";
 
-import LoadingPage from "../../shared/LoadingPage";
+import LoadingPage from "../../shared/ui/LoadingPage";
 
 import { routes } from "./config";
 

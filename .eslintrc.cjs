@@ -22,6 +22,7 @@ module.exports = {
     "react-hooks",
   ],
   rules: {
+    "import/extensions": 'off',
     "no-return-await": "off",
     "@typescript-eslint/return-await": "off",
     "react/jsx-props-no-spreading": "off",
