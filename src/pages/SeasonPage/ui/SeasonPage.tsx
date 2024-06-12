@@ -16,10 +16,8 @@ const SeasonPage = () => {
   );
   return (
     <section className={styles.root}>
-      <div className={styles.headerSeason}>
-        <CustomTypography type="title">{seasonTitle}</CustomTypography>
-      </div>
       <div className={styles.contentSeason}>
+        <CustomTypography type="title">{seasonTitle}</CustomTypography>
         <Tabs centered defaultActiveKey="1" items={items} />
       </div>
     </section>

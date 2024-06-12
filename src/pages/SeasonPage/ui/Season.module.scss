@@ -3,21 +3,16 @@
   display: flex;
   flex-direction: column;
   gap: 52px;
-  padding: 0 50px;
 }
 
-.headerSeason {
-  padding: 25px 0;
-  text-align: center;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: #fff;
-  border-radius: 20px;
-}
 
 .contentSeason {
-  padding: 10px 20px;
+  display: flex;
+  text-align: center;
+  flex-direction: column;
+  justify-content: center;
+  gap: 20px;
+  padding: 50px 25px;
   background-color: #fff;
   border-radius: 20px;
 }
