@@ -24,7 +24,7 @@ const Main = () => {
       >
         <div className="inner">
           <div className="section-head">
-            <CustomTypography type="h2">Список сезонов</CustomTypography>
+            <CustomTypography type="h2">Архив сезонов</CustomTypography>
           </div>
           <SeasonList items={data} />
         </div>

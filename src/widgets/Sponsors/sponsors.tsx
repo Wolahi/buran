@@ -12,19 +12,21 @@ const Sponsors = () => (
       type="title"
       className={style.sponsors__head}
     >
-      ПАРТНЕРЫ ХК "БУРАН"
+      Партнеры ХК «Буран»:
     </CustomTypography>
     <div className={style.sponsors__content}>
       <div className={style.sponsors__image}>
         <img
           src={negorod}
           alt=""
+          loading="lazy"
         />
       </div>
       <div className={style.sponsors__image}>
         <img
           src={arena}
           alt=""
+          loading="lazy"
         />
       </div>
 
@@ -32,12 +34,14 @@ const Sponsors = () => (
         <img
           src={tv}
           alt=""
+          loading="lazy"
         />
       </div>
       <div className={style.sponsors__image}>
         <img
           src={bassein}
           alt=""
+          loading="lazy"
         />
       </div>
     </div>

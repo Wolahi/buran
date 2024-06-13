@@ -3,9 +3,9 @@
 
 .about {
   display: grid;
-  gap: 24px;
+  gap: 36px;
   @include media-tablet {
-    gap: 20px;
+    gap: 28px;
   }
   @include media-mobile {
     gap: 16px;
