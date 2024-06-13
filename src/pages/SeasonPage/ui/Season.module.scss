@@ -1,5 +1,7 @@
+@import "@/app/styles/utils/variables";
 
 .root {
+  margin-top: 80px !important;
   display: flex;
   flex-direction: column;
   gap: 52px;
@@ -13,6 +15,6 @@
   justify-content: center;
   gap: 20px;
   padding: 50px 25px;
-  background-color: #fff;
+  background-color: #f5f2f5;
   border-radius: 20px;
 }
