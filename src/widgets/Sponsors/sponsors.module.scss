@@ -1,0 +1,31 @@
+@import "@/app/styles/utils/variables";
+@import "@/app/styles/utils/media";
+
+.sponsors {
+  display: grid;
+  gap: 12px;
+  &__content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    @include media-tablet {
+      gap: 18px;
+    }
+    @include media-mobile {
+      flex-wrap: wrap;
+      justify-content: space-around;
+      gap: 24px 8px;
+    }
+  }
+  &__image {
+    max-width: 240px;
+    pointer-events: none;
+    @include media-tablet {
+      max-width: 160px;
+    }
+    @include media-mobile {
+      max-width: 120px;
+    }
+  }
+}

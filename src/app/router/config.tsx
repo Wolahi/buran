@@ -9,8 +9,8 @@ import {
 } from "@/pages";
 
 export enum ERoute {
-  Index = "/",
-  Main = "/main",
+  Index = "/index",
+  Main = "/",
   AdminPage = "/admin",
   CommandsPage = "/commands",
   SeasonPage = '/season/:id',

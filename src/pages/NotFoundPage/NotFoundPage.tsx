@@ -13,7 +13,7 @@ const NotFoundPage = () => (
       </div>
       <div className={style.notFoundPage__text}>
         {" "}
-        404 - Странца не <span className="text-nowrap">найдена! :(</span>
+        404 - Страница не <span className="text-nowrap">найдена! :(</span>
       </div>
     </div>
   </div>

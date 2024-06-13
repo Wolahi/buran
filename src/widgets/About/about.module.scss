@@ -1,0 +1,13 @@
+@import "@/app/styles/utils/variables";
+@import "@/app/styles/utils/media";
+
+.about {
+  display: grid;
+  gap: 36px;
+  @include media-tablet {
+    gap: 28px;
+  }
+  @include media-mobile {
+    gap: 16px;
+  }
+}

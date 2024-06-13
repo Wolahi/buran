@@ -10,18 +10,23 @@ const Header = () => (
     <div className={style.headerWrapper}>
       <div className="inner">
         <div className={style.header__content}>
-          <Link to="/" className={style.header__logo}>
-            <img src={logo} alt="Логотип «Буран»" />
+          <Link
+            to="/"
+            className={style.header__logo}
+          >
+            <img
+              src={logo}
+              alt="Логотип «Буран»"
+            />
           </Link>
-
           <nav className={style.header__nav}>
             <div className={style.header__seasons}>
               <DropDown
                 title="Выбор сезона"
                 items={[
-                  { text: "Архив сезонов", link: "/", id: 0 },
-                  { text: "Сезон 2022-2023 гг.", link: `/season/${1}`, id: 1 },
-                  { text: "Сезон 2023-2024 гг.", link: `/season/${2}`, id: 2 },
+                  { text: "Архив сезонов", link: "#sectionSeasons", id: 0 },
+                  { text: "Сезон 2022-2023 гг.", link: "/season/1", id: 1 },
+                  { text: "Сезон 2023-2024 гг.", link: "/season/1", id: 2 },
                 ]}
                 mods="white"
               />
