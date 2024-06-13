@@ -1,0 +1,9 @@
+export enum EPlayerType {
+  GOALKEEPER = "GOALKEEPER",
+  DEFENDER = "DEFENDER",
+  FORWARD = "FORWARD",
+  UNIVERSAL = "UNIVERSAL",
+  CAPTAIN = "CAPTAIN",
+  COACH = "COACH",
+  MEDIC = "MEDIC",
+}
