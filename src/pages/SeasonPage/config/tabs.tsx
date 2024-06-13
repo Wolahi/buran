@@ -1,6 +1,7 @@
 import { TabsProps } from "antd";
 
 import { CustomTypography } from "@/shared/ui/CustomTypography";
+import MatchList from "@/widgets/MatchList/ui/MatchList.tsx";
 import NewsList from "@/widgets/NewsList/ui/NewsList.tsx";
 
 export const items: TabsProps["items"] = [
@@ -17,7 +18,7 @@ export const items: TabsProps["items"] = [
   {
     key: "3",
     label: <CustomTypography type="subtitle">Матчи</CustomTypography>,
-    children: <CustomTypography type="title">Матчи</CustomTypography>,
+    children: <MatchList />,
   },
   {
     key: "4",
