@@ -20,6 +20,7 @@
   }
   &__image {
     max-width: 240px;
+    pointer-events: none;
     @include media-tablet {
       max-width: 160px;
     }
