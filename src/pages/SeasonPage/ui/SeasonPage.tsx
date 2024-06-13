@@ -1,6 +1,7 @@
 import { useMemo } from "react";
 import { useParams } from "react-router";
 import { Tabs } from "antd";
+import classNames from "classnames";
 
 import styles from "./Season.module.scss";
 
@@ -15,7 +16,7 @@ const SeasonPage = () => {
     [id],
   );
   return (
-    <section className={styles.root}>
+    <section className={classNames(styles.root, "inner")}>
       <div className={styles.contentSeason}>
         <CustomTypography type="title">{seasonTitle}</CustomTypography>
         <Tabs centered defaultActiveKey="1" items={items} />

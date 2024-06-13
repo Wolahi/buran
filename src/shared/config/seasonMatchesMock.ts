@@ -1,4 +1,3 @@
-import SKA from "@/assets/SKA.png";
 import { EMatchAction } from "@/shared/config/interfaces/EMatchAction.ts";
 import { EPlayerType } from "@/shared/config/interfaces/EPlayerType.ts";
 import { IMatchInfo } from "@/shared/config/interfaces/IMatchInfo.ts";
@@ -8,7 +7,7 @@ export const seasonMatchesMock: IMatchInfo[] = [
     id: 1,
     title: "Вот эта победа",
     dateStart: "2024-06-13T17:32:09.120981+03:00",
-    enemy: SKA,
+    enemy: "Дурачки",
     team: [
       {
         id: 1,
@@ -40,6 +39,11 @@ export const seasonMatchesMock: IMatchInfo[] = [
         action: EMatchAction.Entry,
       },
       {
+        enemy: true,
+        minutes: 3,
+        action: EMatchAction.Entry,
+      },
+      {
         playerId: 1,
         enemy: false,
         minutes: 10,
@@ -57,7 +61,7 @@ export const seasonMatchesMock: IMatchInfo[] = [
     id: 2,
     title: "Вот эта победа",
     dateStart: "2024-06-13T17:32:09.120981+03:00",
-    enemy: SKA,
+    enemy: "Дурачки",
     team: [
       {
         id: 1,

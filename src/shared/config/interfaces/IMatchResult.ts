@@ -1,7 +1,7 @@
 import { EMatchAction } from "@/shared/config/interfaces/EMatchAction.ts";
 
 export interface IMatchResult {
-  playerId: number;
+  playerId?: number;
   enemy: boolean;
   minutes: number;
   action: EMatchAction;

@@ -20,26 +20,4 @@ export const items: TabsProps["items"] = [
     label: <CustomTypography type="subtitle">Матчи</CustomTypography>,
     children: <MatchList />,
   },
-  {
-    key: "4",
-    label: (
-      <CustomTypography type="subtitle">Тренерская работа</CustomTypography>
-    ),
-    children: (
-      <CustomTypography type="title">Тренерская работа</CustomTypography>
-    ),
-  },
-  {
-    key: "5",
-    label: (
-      <CustomTypography type="subtitle">
-        Развлеткательная программа
-      </CustomTypography>
-    ),
-    children: (
-      <CustomTypography type="title">
-        Развлеткательная программа
-      </CustomTypography>
-    ),
-  },
 ];
