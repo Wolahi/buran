@@ -9,9 +9,9 @@ import styles from "./Match.module.scss";
 import "swiper/css";
 import "swiper/css/pagination";
 import { IMatchProps } from "@/entity/Match/ui/interfaces/IMatchProps.ts";
+import { translateAction } from "@/shared/config/translateRoleTeam.ts";
 import { CustomTypography } from "@/shared/ui/CustomTypography";
 import PlayerImage from "@/shared/ui/PlayerImage/ui/PlayerImage.tsx";
-import { translateAction } from "@/shared/config/translateRoleTeam.ts";
 
 const Match = ({ match }: IMatchProps) => {
   const itemsAction: StepsProps[] = useMemo(
@@ -30,28 +30,29 @@ const Match = ({ match }: IMatchProps) => {
               ),
             }
           : {
-              icon: (
-                <div className={styles.actionPlayer}>
-                  <img
-                    src={
-                      match.team.find((player) => player.id === action.playerId)
-                        ?.url
-                    }
-                    alt={`${action.playerId}`}
-                  />
-                </div>
-              ),
+              status: "process",
               title: (
                 <CustomTypography type="subtitle">
                   {translateAction[action.action]}
                 </CustomTypography>
               ),
-              description: (
-                <CustomTypography type="subtitle">{`Минута ${action.minutes}`}</CustomTypography>
-              ),
+              description: () => {
+                const player =
+                  match.team.find((player) => player.id === action.playerId) ??
+                  match.team[0];
+                return (
+                  <div className={styles.tooltip}>
+                    <div className={styles.actionPlayer}>
+                      <img src={player.url} alt={`${action.playerId}`} />
+                    </div>
+                    <CustomTypography type="subtitle">{`Номер: ${player.number}`}</CustomTypography>
+                    <CustomTypography type="subtitle">{`Минута ${action.minutes}`}</CustomTypography>
+                  </div>
+                );
+              },
             },
       ),
-    [],
+    [match],
   );
   return (
     <List.Item>
@@ -91,7 +92,11 @@ const Match = ({ match }: IMatchProps) => {
               Главные моменты матча
             </CustomTypography>
             <div className={styles.actionWrapper}>
-              <Steps items={itemsAction} className={styles.actions} />
+              <Steps
+                type="inline"
+                items={itemsAction}
+                className={styles.actions}
+              />
             </div>
           </div>
         </div>

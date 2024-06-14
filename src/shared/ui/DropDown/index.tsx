@@ -7,7 +7,7 @@ import style from "./DropDown.module.scss";
 type DropDownProps = {
   title: string;
   items: {
-    id: number;
+    id: string;
     text: string;
     link?: string;
   }[];
