@@ -7,7 +7,7 @@ export const seasonMatchesMock: IMatchInfo[] = [
     id: 1,
     title: "Вот эта победа",
     dateStart: "2024-06-13T17:32:09.120981+03:00",
-    enemy: "Дурачки",
+    enemy: "Враги",
     team: [
       {
         id: 1,
