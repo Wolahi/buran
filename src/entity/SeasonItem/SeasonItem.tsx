@@ -8,14 +8,9 @@ type SeasonItemProps = {
 };
 
 const SeasonItem = ({ title, link }: SeasonItemProps) => (
-  <div className={style.seasonItem}>
-    <Link
-      to={link}
-      className={style.seasonItem__title}
-    >
-      {title}
-    </Link>
-  </div>
+  <Link to={link} className={style.seasonItem__title}>
+    <div className={style.seasonItem}>{title}</div>
+  </Link>
 );
 
 export default SeasonItem;

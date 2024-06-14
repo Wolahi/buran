@@ -1,12 +1,22 @@
+import { useMemo } from "react";
+
+import useGetSeason from "@/shared/module/useGetSeason.ts";
 import { CustomTypography } from "@/shared/ui/CustomTypography";
-import About from "@/widgets/About/about";
-import SeasonList from "@/widgets/SeasonList/SeasonList";
+import About from "@/widgets/About/about.tsx";
+import SeasonList from "@/widgets/SeasonList/SeasonList.tsx";
 
 const Main = () => {
-  const data = [
-    { id: 0, title: "Сезон 2022-2023 гг.", link: "#" },
-    { id: 1, title: "Сезон 2023-2024 гг.", link: "#" },
-  ];
+  const { seasons } = useGetSeason();
+
+  const data = useMemo(
+    () =>
+      seasons.map((season) => ({
+        id: season.title,
+        title: `Сезон ${season.title} гг.`,
+        link: `/season/${season.title}`,
+      })),
+    [seasons],
+  );
 
   return (
     <div>
@@ -18,10 +28,7 @@ const Main = () => {
           <About />
         </div>
       </section>
-      <section
-        className="section"
-        id="sectionSeasons"
-      >
+      <section className="section" id="sectionSeasons">
         <div className="inner">
           <div className="section-head">
             <CustomTypography type="h2">Архив сезонов</CustomTypography>

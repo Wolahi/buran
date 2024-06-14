@@ -51,19 +51,21 @@
   }
 }
 
+.tooltip {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.bold {
+  font-weight: 800;
+}
+
 .actionWrapper {
   position: relative;
-  width: 100%;
-  overflow: auto;
   &::-webkit-scrollbar {
     width: 0;
   }
-}
-
-.actions {
-
-
-
 }
 
 .actionPlayer {

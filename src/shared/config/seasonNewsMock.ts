@@ -5,16 +5,16 @@ export const seasonNewsMock: INews[] = [
   {
     title: "Я победил",
     text: "Очень очень больно и грустно",
-    photos: BG,
+    photos: [BG],
   },
   {
     title: "Ты победил",
     text: "Очень очень больно и грустно",
-    photos: BG,
+    photos: [BG],
   },
   {
     title: "Мы победили",
     text: "Очень очень больно и грустно",
-    photos: BG,
+    photos: [BG],
   },
 ];
