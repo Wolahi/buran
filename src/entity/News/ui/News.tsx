@@ -1,10 +1,10 @@
+import { Link, useParams } from "react-router-dom";
 import { Card } from "antd";
 
 import styles from "./News.module.scss";
 
 import { ICardNewsProps } from "@/entity/News/ui/interfaces/ICardNewsProps.ts";
 import { CustomTypography } from "@/shared/ui/CustomTypography";
-import { Link, useParams } from "react-router-dom";
 import SandClock from "@/assets/clock.svg?react";
 
 const { Meta } = Card;
