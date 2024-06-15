@@ -39,7 +39,7 @@ const useImageStorage = () => {
     }
   };
 
-  return { image, setImageInStorage, deleteImage, loading };
+  return { image, setImageInStorage, deleteImage, loading, setImage };
 };
 
 export default useImageStorage;

@@ -19,8 +19,9 @@ import { CustomTypography } from "@/shared/ui/CustomTypography";
 dayjs.locale("ru");
 
 const AddNewsForm = ({ open, onClose, setNews }: IDrawerNewsProps) => {
-  const { control, handleSubmit } = useForm<IAddNewsForm>();
-  const { deleteImage, setImageInStorage, image, loading } = useImageStorage();
+  const { control, handleSubmit, reset } = useForm<IAddNewsForm>();
+  const { deleteImage, setImageInStorage, image, loading, setImage } =
+    useImageStorage();
   const { addNews } = useAddNews();
   const { id } = useParams();
 
@@ -33,6 +34,10 @@ const AddNewsForm = ({ open, onClose, setNews }: IDrawerNewsProps) => {
       };
       const res = await addNews(tempData, id);
       setNews((prev: INews[]) => [...prev, res.data]);
+      setImage(null);
+      reset();
+      // @ts-ignore
+      onClose();
     }
   };
 
