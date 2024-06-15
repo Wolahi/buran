@@ -1,0 +1,12 @@
+@import "@/app/styles/utils/variables";
+@import "@/app/styles/utils/media";
+
+.root {
+  margin-top: 80px;
+  @include media-tablet {
+    margin-top: 65px;
+  }
+  @include media-mobile {
+    margin-top: 50px;
+  }
+}

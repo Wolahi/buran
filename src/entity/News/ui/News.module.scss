@@ -1,9 +1,53 @@
-.root {
+@import "@/app/styles/utils/media";
+@import "@/app/styles/utils/variables";
 
-}
-
-.bold {
-  span {
+.news {
+  overflow: hidden;
+  @include media-mobile {
+    width: 100%;
+    max-width: 520px;
+    margin: 0 auto;
+  }
+  @media (hover: hover) {
+    &:hover {
+      box-shadow: 0 3px 30px rgb(135 151 155 / 0.15);
+      .news__image {
+        img {
+          transform: scale(1.05);
+        }
+      }
+    }
+  }
+  &__card {
+    height: 100%;
+  }
+  &__image {
+    width: 100%;
+    height: 300px;
+    overflow: hidden;
+    @include media-tablet {
+      height: 300px;
+    }
+    @include media-mobile {
+      height: 300px;
+    }
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: all 0.3s ease-in;
+      pointer-events: none;
+    }
+  }
+  &__title {
+    display: inline-block;
     font-weight: 700;
+    margin-bottom: 10px;
+    @include media-mobile {
+      margin-bottom: 8px;
+    }
+  }
+  &__text {
+    margin-top: auto;
   }
 }

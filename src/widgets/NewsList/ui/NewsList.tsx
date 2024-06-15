@@ -9,7 +9,10 @@ const NewsList = () => {
     <div className={styles.root}>
       <div className={styles.list}>
         {news.map((news) => (
-          <News news={news} />
+          <News
+            key={news.id}
+            news={news}
+          />
         ))}
       </div>
     </div>

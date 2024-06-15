@@ -7,17 +7,17 @@ import NewsList from "@/widgets/NewsList/ui/NewsList.tsx";
 export const items: TabsProps["items"] = [
   {
     key: "1",
-    label: <CustomTypography type="subtitle">Новости</CustomTypography>,
+    label: <CustomTypography type="textMs">Новости</CustomTypography>,
     children: <NewsList />,
   },
   {
     key: "2",
-    label: <CustomTypography type="subtitle">Топ Игроки</CustomTypography>,
+    label: <CustomTypography type="textMs">Топ Игроки</CustomTypography>,
     children: <CustomTypography type="title">Топ Игроки</CustomTypography>,
   },
   {
     key: "3",
-    label: <CustomTypography type="subtitle">Матчи</CustomTypography>,
+    label: <CustomTypography type="textMs">Матчи</CustomTypography>,
     children: <MatchList />,
   },
 ];
