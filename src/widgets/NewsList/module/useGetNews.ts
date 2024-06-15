@@ -19,7 +19,7 @@ const useGetNews = () => {
     })();
   }, [id]);
 
-  return { news };
+  return { news, setNews };
 };
 
 export default useGetNews;

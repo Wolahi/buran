@@ -4,9 +4,9 @@ import { FloatButton } from "antd";
 
 import style from "./SeasonList.module.scss";
 
+import { useAuthContext } from "@/app/module/hooks/useAuthContext.ts";
 import SeasonItem from "@/entity/SeasonItem/ui/SeasonItem.tsx";
 import AddSeasonForm from "@/features/AddSeasonForm/ui/AddSeasonForm.tsx";
-import { useAuthContext } from "@/app/module/hooks/useAuthContext.ts";
 
 type SeasonListProps = {
   items: {
