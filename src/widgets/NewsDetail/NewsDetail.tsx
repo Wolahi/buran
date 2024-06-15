@@ -2,6 +2,7 @@ import styles from "./NewsDetail.module.scss";
 
 import { CustomTypography } from "@/shared/ui/CustomTypography";
 import { INews } from "@/shared/config/interfaces/INews";
+import SandClock from "@/assets/clock.svg?react";
 
 type NewsDetailProps = {
   news?: INews;
@@ -24,6 +25,10 @@ const NewsDetail = ({ news }: NewsDetailProps) => {
               className={styles.news__title}
               type="h2"
             >
+              <span className={styles.news__date}>
+                <SandClock />
+                {news?.date}
+              </span>
               {news?.title}
             </CustomTypography>
           </div>

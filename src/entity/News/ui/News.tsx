@@ -32,7 +32,7 @@ const News = ({ news }: ICardNewsProps) => {
       >
         <span className={styles.news__date}>
           <SandClock />
-          19.09.2024
+          {news.date}
         </span>
         <CustomTypography
           className={styles.news__title}
