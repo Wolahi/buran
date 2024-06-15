@@ -1,20 +1,35 @@
 @import "@/app/styles/utils/variables";
+@import "@/app/styles/utils/media";
 
 .root {
-  margin-top: 80px !important;
-  display: flex;
-  flex-direction: column;
-  gap: 52px;
+  margin-top: 80px;
+  @include media-tablet {
+    margin-top: 65px;
+  }
+  @include media-mobile {
+    margin-top: 50px;
+  }
 }
-
 
 .contentSeason {
   display: flex;
   text-align: center;
   flex-direction: column;
   justify-content: center;
-  gap: 20px;
   padding: 50px 25px;
+  gap: 24px;
   background-color: #f5f2f5;
-  border-radius: 20px;
+  border-radius: 18px;
+  @include media-tablet {
+    padding: 40px 25px;
+    gap: 20px;
+  }
+  @include media-mobile {
+    padding: 35px 16px;
+    gap: 18px;
+  }
+}
+
+.season__tabs {
+  font-size: 36px;
 }

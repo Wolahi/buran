@@ -4,6 +4,7 @@
 .typography {
   font-family: $font;
   font-weight: normal;
+  color: $black;
 }
 
 .p {
@@ -81,6 +82,15 @@
   }
   @include media-mobile {
     font-size: 8px;
+  }
+}
+
+.textMs {
+  font: 400 18px/1.4 $font;
+  color: var(--grey-color);
+
+  @include media-mobile {
+    font-size: 16px;
   }
 }
 

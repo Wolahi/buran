@@ -10,10 +10,17 @@ import { CustomTypography } from "@/shared/ui/CustomTypography";
 const SeasonPage = () => {
   const { id } = useParams();
   return (
-    <section className={classNames(styles.root, "inner")}>
-      <div className={styles.contentSeason}>
-        <CustomTypography type="title">{`Сезон ${id}`}</CustomTypography>
-        <Tabs centered defaultActiveKey="1" items={items} />
+    <section className={classNames(styles.root)}>
+      <div className="inner">
+        <div className={styles.contentSeason}>
+          <CustomTypography type="h2">{`Сезон ${id}`}</CustomTypography>
+          <Tabs
+            className={styles.season__tabs}
+            centered
+            defaultActiveKey="1"
+            items={items}
+          />
+        </div>
       </div>
     </section>
   );

@@ -19,15 +19,21 @@ const Header = () => {
           link: `/season/${season.title}`,
         }))
         .splice(0, 2),
-    [seasons],
+    [seasons]
   );
   return (
     <header className={style.header}>
       <div className={style.headerWrapper}>
         <div className="inner">
           <div className={style.header__content}>
-            <Link to="/" className={style.header__logo}>
-              <img src={logo} alt="Логотип «Буран»" />
+            <Link
+              to="/"
+              className={style.header__logo}
+            >
+              <img
+                src={logo}
+                alt="Логотип «Буран»"
+              />
             </Link>
             <nav className={style.header__nav}>
               <div className={style.header__seasons}>
@@ -44,7 +50,7 @@ const Header = () => {
                   mods="white"
                 />
               </div>
-              <Link to="/commands">Команды</Link>
+              <Link to="/commands">Команда</Link>
             </nav>
           </div>
         </div>

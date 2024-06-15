@@ -44,11 +44,26 @@ const DropDown = ({ title, items, mods }: DropDownProps) => {
   }, []);
 
   return (
-    <div ref={dropdownRef} className={style.dropdownWrapper}>
+    <div
+      ref={dropdownRef}
+      className={style.dropdownWrapper}
+    >
       <ul className={classes}>
         {items.map((el) => (
-          <li key={el.id} className={style.dropdown__item}>
-            {el.link ? <Link to={el.link}>{el.text}</Link> : el.text}
+          <li
+            key={el.id}
+            className={style.dropdown__item}
+          >
+            {el.link ? (
+              <Link
+                to={el.link}
+                onClick={() => setDropdownState(false)}
+              >
+                {el.text}
+              </Link>
+            ) : (
+              el.text
+            )}
           </li>
         ))}
       </ul>

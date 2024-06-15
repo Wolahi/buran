@@ -5,7 +5,9 @@ import {
   CommandsPage,
   IndexPage,
   MainPage,
-  NotFoundPage, SeasonPage,
+  NotFoundPage,
+  SeasonPage,
+  NewsDetailPage,
 } from "@/pages";
 
 export enum ERoute {
@@ -13,7 +15,8 @@ export enum ERoute {
   Main = "/",
   AdminPage = "/admin",
   CommandsPage = "/commands",
-  SeasonPage = '/season/:id',
+  SeasonPage = "/season/:id",
+  newsDetailPage = "/news/:seasonId/:newsId",
   NotFound = "*",
 }
 
@@ -33,6 +36,10 @@ export const routes: Record<string, RouteProps> = {
   SeasonPage: {
     path: ERoute.SeasonPage,
     element: <SeasonPage />,
+  },
+  newsDetailPage: {
+    path: ERoute.newsDetailPage,
+    element: <NewsDetailPage />,
   },
   CommandsPage: {
     path: ERoute.CommandsPage,
