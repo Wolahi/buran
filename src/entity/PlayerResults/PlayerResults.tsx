@@ -1,3 +1,10 @@
-const PlayerResults = () => <div>Player</div>
+import { PlayerResultsProps } from "./interfaces/PlayerResultsProps";
 
-export default PlayerResults
+const PlayerResults = ({ player, actions }: PlayerResultsProps) => (
+  <div>
+    {player?.name}
+    <span>{actions?.GOAL}</span>
+  </div>
+);
+
+export default PlayerResults;

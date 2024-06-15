@@ -4,4 +4,5 @@ export enum EMatchAction {
   Swap = "SWAP",
   Entry = "ENTRY",
   Miss = "MISS",
+  Bad = "BAD",
 }
