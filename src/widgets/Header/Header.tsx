@@ -3,12 +3,14 @@ import { Link } from "react-router-dom";
 
 import style from "./header.module.scss";
 
+import { useAuthContext } from "@/app/module/hooks/useAuthContext.ts";
 import logo from "@/assets/logo.png";
 import useGetSeason from "@/shared/module/useGetSeason.ts";
 import DropDown from "@/shared/ui/DropDown";
 
 const Header = () => {
   const { seasons } = useGetSeason();
+  const { isAuth } = useAuthContext();
 
   const data = useMemo(
     () =>
@@ -21,6 +23,7 @@ const Header = () => {
         .splice(0, 2),
     [seasons]
   );
+
   return (
     <header className={style.header}>
       <div className={style.headerWrapper}>
@@ -51,6 +54,7 @@ const Header = () => {
                 />
               </div>
               <Link to="/commands">Команда</Link>
+              {isAuth && "Админ"}
             </nav>
           </div>
         </div>

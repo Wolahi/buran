@@ -15,7 +15,7 @@ const useGetSeason = () => {
     })();
   }, []);
 
-  return { seasons };
+  return { seasons, setSeasons };
 };
 
 export default useGetSeason;
