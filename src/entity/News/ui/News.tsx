@@ -5,6 +5,7 @@ import styles from "./News.module.scss";
 import { ICardNewsProps } from "@/entity/News/ui/interfaces/ICardNewsProps.ts";
 import { CustomTypography } from "@/shared/ui/CustomTypography";
 import { Link, useParams } from "react-router-dom";
+import SandClock from "@/assets/clock.svg?react";
 
 const { Meta } = Card;
 
@@ -17,17 +18,22 @@ const News = ({ news }: ICardNewsProps) => {
       className={styles.news}
     >
       <Card
+        classNames={{ body: styles.news__body }}
         className={styles.news__card}
         cover={
           <div className={styles.news__image}>
             {" "}
             <img
-              src={news.photos[0]}
+              src={news.photos}
               alt="cover"
             />
           </div>
         }
       >
+        <span className={styles.news__date}>
+          <SandClock />
+          19.09.2024
+        </span>
         <CustomTypography
           className={styles.news__title}
           type="textM"
