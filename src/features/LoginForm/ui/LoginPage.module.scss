@@ -1,0 +1,22 @@
+.root {
+  padding: 25px;
+  min-width: 350px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  background-color: #fff;
+  border-radius: 10px;
+}
+
+.inputsWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  width: 80%;
+}
+
+.item {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}

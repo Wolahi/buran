@@ -1,3 +1,6 @@
+import { PlusOutlined } from "@ant-design/icons";
+import { FloatButton } from "antd";
+
 import styles from "./NewsList.module.scss";
 
 import News from "@/entity/News/ui/News.tsx";
@@ -11,6 +14,9 @@ const NewsList = () => {
         {news.map((news) => (
           <News news={news} />
         ))}
+        <FloatButton>
+          <PlusOutlined />
+        </FloatButton>
       </div>
     </div>
   );

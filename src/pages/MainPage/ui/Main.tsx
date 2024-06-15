@@ -3,16 +3,16 @@ import { useMemo } from "react";
 import useGetSeason from "@/shared/module/useGetSeason.ts";
 import { CustomTypography } from "@/shared/ui/CustomTypography";
 import About from "@/widgets/About/about.tsx";
-import SeasonList from "@/widgets/SeasonList/SeasonList.tsx";
+import SeasonList from "@/widgets/SeasonList/ui/SeasonList.tsx";
 
 const Main = () => {
-  const { seasons } = useGetSeason();
+  const { seasons, setSeasons } = useGetSeason();
 
   const data = useMemo(
     () =>
       seasons.map((season) => ({
         id: season.title,
-        title: `Сезон ${season.title} гг.`,
+        title: season.title,
         link: `/season/${season.title}`,
       })),
     [seasons],
@@ -33,7 +33,7 @@ const Main = () => {
           <div className="section-head">
             <CustomTypography type="h2">Архив сезонов</CustomTypography>
           </div>
-          <SeasonList items={data} />
+          <SeasonList items={data} setSeasons={setSeasons} />
         </div>
       </section>
     </div>
