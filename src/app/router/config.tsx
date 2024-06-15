@@ -1,21 +1,21 @@
 import { ReactElement } from "react";
 
 import {
+  AdminLogin,
   CommandsPage,
   IndexPage,
   MainPage,
+  NewsDetailPage,
   NotFoundPage,
   SeasonPage,
-    NewsDetailPage,
 } from "@/pages";
-import { AdminLogin } from "@/pages/AdminLogin/ui";
 
 export enum ERoute {
   Index = "/index",
   Main = "/",
   AdminLogin = "/login",
   CommandsPage = "/commands",
-  SeasonPage = '/season/:id',
+  SeasonPage = "/season/:id",
   newsDetailPage = "/news/:seasonId/:newsId",
   NotFound = "*",
 }
@@ -50,7 +50,7 @@ export const routes: Record<string, IRouteProps> = {
   newsDetailPage: {
     path: ERoute.newsDetailPage,
     element: <NewsDetailPage />,
-      isAdmin: false,
+    isAdmin: false,
   },
   CommandsPage: {
     path: ERoute.CommandsPage,
