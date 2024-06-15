@@ -7,13 +7,13 @@ import Hero from "@/widgets/Hero/hero.tsx";
 import SeasonList from "@/widgets/SeasonList/SeasonList";
 
 const Main = () => {
-  const { seasons } = useGetSeason();
+  const { seasons, setSeasons } = useGetSeason();
 
   const data = useMemo(
     () =>
       seasons.map((season) => ({
         id: season.title,
-        title: `Сезон ${season.title} гг.`,
+        title: season.title,
         link: `/season/${season.title}`,
       })),
     [seasons]
@@ -43,7 +43,7 @@ const Main = () => {
               Архив сезонов
             </CustomTypography>
           </div>
-          <SeasonList items={data} />
+          <SeasonList items={data} setSeasons={setSeasons} />
         </div>
       </section>
     </section>
