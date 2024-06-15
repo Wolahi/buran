@@ -3,48 +3,18 @@ import { INews } from "@/shared/config/interfaces/INews.ts";
 
 export const seasonNewsMock: INews[] = [
   {
-    title: "Я разбился",
+    title: "Я победил",
     text: "Очень очень больно и грустно",
-    photos: BG,
+    photos: [BG],
   },
   {
-    title: "Он разбился",
+    title: "Ты победил",
     text: "Очень очень больно и грустно",
-    photos: BG,
+    photos: [BG],
   },
   {
-    title: "Мы разбились",
+    title: "Мы победили",
     text: "Очень очень больно и грустно",
-    photos: BG,
-  },
-  {
-    title: "Я разбился",
-    text: "Очень очень больно и грустно",
-    photos: BG,
-  },
-  {
-    title: "Он разбился",
-    text: "Очень очень больно и грустно",
-    photos: BG,
-  },
-  {
-    title: "Мы разбились",
-    text: "Очень очень больно и грустно",
-    photos: BG,
-  },
-  {
-    title: "Я разбился",
-    text: "Очень очень больно и грустно",
-    photos: BG,
-  },
-  {
-    title: "Он разбился",
-    text: "Очень очень больно и грустно",
-    photos: BG,
-  },
-  {
-    title: "Мы разбились",
-    text: "Очень очень больно и грустно",
-    photos: BG,
+    photos: [BG],
   },
 ];

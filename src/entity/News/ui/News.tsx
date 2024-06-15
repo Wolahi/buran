@@ -8,7 +8,10 @@ import { CustomTypography } from "@/shared/ui/CustomTypography";
 const { Meta } = Card;
 
 const News = ({ news }: ICardNewsProps) => (
-  <Card className={styles.root} cover={<img src={news.photos} alt="cover" />}>
+  <Card
+    className={styles.root}
+    cover={<img src={news.photos[0]} alt="cover" />}
+  >
     <Meta
       className={styles.bold}
       title={<CustomTypography>{news.title}</CustomTypography>}
