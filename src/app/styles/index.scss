@@ -29,6 +29,20 @@ html {
   scroll-behavior: smooth;
   text-rendering: unset;
   -webkit-font-smoothing: unset;
+  scrollbar-width: thin;
+  scrollbar-color: $oceanBlue #bebebe;
+
+  &::-webkit-scrollbar {
+    height: 5px;
+    width: 5px;
+  }
+  &::-webkit-scrollbar-track {
+    background-color: #bebebe;
+  }
+  &::-webkit-scrollbar-thumb {
+    background-color: $oceanBlue;
+    border-radius: 5px;
+  }
 }
 
 body {
