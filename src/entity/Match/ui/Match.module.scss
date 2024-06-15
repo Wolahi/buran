@@ -41,9 +41,12 @@
   align-items: center;
   justify-content: center;
   gap: 20px;
-
+  @include media-custom(374px) {
+    flex-direction: column;
+    gap: 0;
+  }
   .burn {
-    color: $lightSkyBlue
+    color: $lightSkyBlue;
   }
 
   img {
@@ -63,8 +66,50 @@
 
 .actionWrapper {
   position: relative;
+  overflow-x: auto;
+  max-width: 1127px;
+  margin: 0 auto;
+  padding-bottom: 8px;
+  @include media-custom(1440px) {
+    max-width: 930px;
+  }
+  @include media-custom(1340px) {
+    max-width: 830px;
+  }
+  @include media-tablet {
+    max-width: 730px;
+  }
+  @include media-custom(850px) {
+    max-width: 630px;
+  }
+  @include media-mobile {
+    max-width: 530px;
+  }
+  @include media-custom(630px) {
+    max-width: 430px;
+  }
+  @include media-custom(530px) {
+    max-width: 330px;
+  }
+  @include media-custom(430px) {
+    max-width: 230px;
+  }
+  @include media-custom(330px) {
+    max-width: 130px;
+  }
+  scrollbar-width: thin;
+  scrollbar-color: $oceanBlue #bebebe;
+
   &::-webkit-scrollbar {
-    width: 0;
+    height: 1px;
+    width: 1px;
+  }
+  &::-webkit-scrollbar-track {
+    background-color: #bebebe;
+  }
+  &::-webkit-scrollbar-thumb {
+    background-color: $oceanBlue;
+    border-radius: 1px;
   }
 }
 

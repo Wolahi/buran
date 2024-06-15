@@ -21,7 +21,7 @@ const Match = ({ match }: IMatchProps) => {
           ? {
               status: "error",
               title: (
-                <CustomTypography type="subtitle">
+                <CustomTypography type="textMs">
                   {translateAction[action.action]}
                 </CustomTypography>
               ),
@@ -32,7 +32,7 @@ const Match = ({ match }: IMatchProps) => {
           : {
               status: "process",
               title: (
-                <CustomTypography type="subtitle">
+                <CustomTypography type="textMs">
                   {translateAction[action.action]}
                 </CustomTypography>
               ),
@@ -43,22 +43,25 @@ const Match = ({ match }: IMatchProps) => {
                 return (
                   <div className={styles.tooltip}>
                     <div className={styles.actionPlayer}>
-                      <img src={player.url} alt={`${action.playerId}`} />
+                      <img
+                        src={player.url}
+                        alt={`${action.playerId}`}
+                      />
                     </div>
                     <CustomTypography type="subtitle">{`Номер: ${player.number}`}</CustomTypography>
                     <CustomTypography type="subtitle">{`Минута ${action.minutes}`}</CustomTypography>
                   </div>
                 );
               },
-            },
+            }
       ),
-    [match],
+    [match]
   );
   return (
     <List.Item>
       <div className={styles.root}>
         <div className={styles.item}>
-          <CustomTypography type="subtitle">
+          <CustomTypography type="textMs">
             Наша команда на поле
           </CustomTypography>
           <Swiper
@@ -81,14 +84,20 @@ const Match = ({ match }: IMatchProps) => {
         </div>
         <div className={styles.item}>
           <div className={styles.vsEnemy}>
-            <CustomTypography type="title" className={styles.burn}>
+            <CustomTypography
+              type="title"
+              className={styles.burn}
+            >
               БУРАН
             </CustomTypography>
             <CustomTypography type="h1">VS</CustomTypography>
             <CustomTypography type="title">{match.enemy}</CustomTypography>
           </div>
           <div className={styles.item}>
-            <CustomTypography type="textM" className={styles.burn}>
+            <CustomTypography
+              type="textM"
+              className={styles.burn}
+            >
               Главные моменты матча
             </CustomTypography>
             <div className={styles.actionWrapper}>
