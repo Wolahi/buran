@@ -19,6 +19,7 @@ const useGetBestPlayer = () => {
       });
       setPlayer(res.data.bestPlayer.player);
       setActions(res.data.bestPlayer.actions);
+      console.log(res.data.bestPlayer.actions);
     })();
   }, [id]);
 
