@@ -1,18 +1,20 @@
+import { useState } from "react";
 import { Controller, useForm } from "react-hook-form";
-import { Button, DatePicker, Drawer, Input, Select, Switch } from "antd";
+import { Button, Drawer, Input, Select, Switch } from "antd";
 import dayjs from "dayjs";
+
+import useAddMatchActivities from "../module/useAddMatchActivities";
+
+import { IAddMatchActivitiesForm } from "./interfaces/IAddMatchActivitiesForm";
+import { IAddMatchActivitiesInput } from "./interfaces/IAddMatchActivitiesInput";
+import { IDrawerMatchActivitiesProps } from "./interfaces/IDrawerMatchActivitiesProps";
 
 import styles from "./AddMatchActivitesForm.module.scss";
 
-import { CustomTypography } from "@/shared/ui/CustomTypography";
-import { IDrawerMatchActivitiesProps } from "./interfaces/IDrawerMatchActivitiesProps";
-import { IAddMatchActivitiesForm } from "./interfaces/IAddMatchActivitiesForm";
-import { IAddMatchActivitiesInput } from "./interfaces/IAddMatchActivitiesInput";
-import { IMatchResult } from "@/shared/config/interfaces/IMatchResult";
-import useAddMatchActivities from "../module/useAddMatchActivities";
-import { useState } from "react";
 import { EMatchAction } from "@/shared/config/interfaces/EMatchAction";
+import { IMatchResult } from "@/shared/config/interfaces/IMatchResult";
 import { translateAction } from "@/shared/config/translateRoleTeam";
+import { CustomTypography } from "@/shared/ui/CustomTypography";
 import useGetCommands from "@/widgets/CommandPlayers/module/useGetCommands";
 
 dayjs.locale("ru");
@@ -43,24 +45,15 @@ const AddMatchActivitesForm = ({
   };
 
   return (
-    <Drawer
-      open={open}
-      onClose={onClose}
-    >
-      <form
-        className={styles.root}
-        onSubmit={handleSubmit(onSubmit)}
-      >
+    <Drawer open={open} onClose={onClose}>
+      <form className={styles.root} onSubmit={handleSubmit(onSubmit)}>
         <CustomTypography type="textM">Создание момента матча</CustomTypography>
         <Controller
           control={control}
           name="enemy"
           render={({ field }) => (
             <div className={styles.items}>
-              <CustomTypography
-                type="subtitle"
-                style={{ textAlign: "center" }}
-              >
+              <CustomTypography type="subtitle" style={{ textAlign: "center" }}>
                 Укажите команду
               </CustomTypography>
               <CustomTypography
@@ -70,10 +63,7 @@ const AddMatchActivitesForm = ({
                 <div>Буран</div>
                 <div>{match.enemy}</div>
               </CustomTypography>
-              <Switch
-                {...field}
-                onChange={() => setIsBuran(!isBuran)}
-              />
+              <Switch {...field} onChange={() => setIsBuran(!isBuran)} />
             </div>
           )}
         />
@@ -86,10 +76,7 @@ const AddMatchActivitesForm = ({
               <CustomTypography type="subtitle">
                 Укажите минуту события
               </CustomTypography>
-              <Input
-                type="number"
-                {...field}
-              />
+              <Input type="number" {...field} />
             </div>
           )}
         />
@@ -132,10 +119,7 @@ const AddMatchActivitesForm = ({
           )}
         />
 
-        <Button
-          type="primary"
-          htmlType="submit"
-        >
+        <Button type="primary" htmlType="submit">
           Добавить
         </Button>
       </form>

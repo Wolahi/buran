@@ -1,23 +1,23 @@
+import { useState } from "react";
 import { Link } from "react-router-dom";
 
 import { CommandsPlayerProps } from "./interfaces/CommandsProps";
+import useDeletePlayer from "./module/useDeletePlayer";
 
 import styles from "./CommandsPlayer.module.scss";
 
-import { translateRolePlayer } from "@/shared/config/translateRoleTeam.ts";
-import PlayerImage from "@/shared/ui/PlayerImage/ui/PlayerImage";
 import { useAuthContext } from "@/app/module/hooks/useAuthContext";
-import useDeletePlayer from "./module/useDeletePlayer";
 import Delete from "@/assets/delete.svg?react";
 import Pencil from "@/assets/pencil.svg?react";
 import AddPlayerForm from "@/features/AddPlayerForm/ui/AddPlayerForm";
-import { useState } from "react";
 import { IPlayerSimpleOutput } from "@/shared/config/interfaces/IPlayerSimpleOutput";
+import { translateRolePlayer } from "@/shared/config/translateRoleTeam.ts";
+import PlayerImage from "@/shared/ui/PlayerImage/ui/PlayerImage";
 
 const CommandsPlayer = ({ player, setPlayer }: CommandsPlayerProps) => {
   const { isAuth } = useAuthContext();
   const [playerEdit, setPlayerEdit] = useState<IPlayerSimpleOutput | null>(
-    null
+    null,
   );
   const { deletePlayer } = useDeletePlayer();
   const [open, setOpen] = useState(false);
@@ -29,10 +29,7 @@ const CommandsPlayer = ({ player, setPlayer }: CommandsPlayerProps) => {
 
   return (
     <div className={styles.cardWrapper}>
-      <Link
-        to={`player/${player.id}`}
-        className={styles.cpage__container}
-      >
+      <Link to={`player/${player.id}`} className={styles.cpage__container}>
         <div className={styles.slider}>
           <PlayerImage player={player} />
         </div>
