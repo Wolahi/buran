@@ -1,23 +1,24 @@
 import { useEffect, useMemo, useState } from "react";
 import { List, Steps } from "antd";
 import { StepsProps } from "antd/lib";
+import dayjs from "dayjs";
 import { Mousewheel, Pagination } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
+
+import useDeleteMatch from "../module/useDeleteMatch";
 
 import styles from "./Match.module.scss";
 
 import "swiper/css";
 import "swiper/css/pagination";
-import { IMatchProps } from "@/entity/Match/ui/interfaces/IMatchProps.ts";
-import { translateAction } from "@/shared/config/translateRoleTeam.ts";
-import { CustomTypography } from "@/shared/ui/CustomTypography";
-import PlayerImage from "@/shared/ui/PlayerImage/ui/PlayerImage.tsx";
 import { useAuthContext } from "@/app/module/hooks/useAuthContext";
 import Delete from "@/assets/delete.svg?react";
 import Plus from "@/assets/plus.svg?react";
-import useDeleteMatch from "../module/useDeleteMatch";
+import { IMatchProps } from "@/entity/Match/ui/interfaces/IMatchProps.ts";
 import AddMatchActivitesForm from "@/features/AddMatchActivitesForm/ui/AddMatchActivitesForm";
-import dayjs from "dayjs";
+import { translateAction } from "@/shared/config/translateRoleTeam.ts";
+import { CustomTypography } from "@/shared/ui/CustomTypography";
+import PlayerImage from "@/shared/ui/PlayerImage/ui/PlayerImage.tsx";
 
 const Match = ({ match, setMatch }: IMatchProps) => {
   const { isAuth } = useAuthContext();
@@ -71,19 +72,16 @@ const Match = ({ match, setMatch }: IMatchProps) => {
                 return (
                   <div className={styles.tooltip}>
                     <div className={styles.actionPlayer}>
-                      <img
-                        src={player.url}
-                        alt={`${action.playerId}`}
-                      />
+                      <img src={player.url} alt={`${action.playerId}`} />
                     </div>
                     <CustomTypography type="subtitle">{`Номер: ${player.number}`}</CustomTypography>
                     <CustomTypography type="subtitle">{`Минута ${action.minutes}`}</CustomTypography>
                   </div>
                 );
               },
-            }
+            },
       ),
-    [match]
+    [match],
   );
   return (
     <List.Item>
@@ -112,43 +110,25 @@ const Match = ({ match, setMatch }: IMatchProps) => {
           </Swiper>
         </div>
         <div className={styles.item}>
-          <CustomTypography
-            type="textM"
-            className={styles.burn}
-          >
-            {dayjs(match.dateStart).locale("ru").format("YYYY-MM-DD")}
+          <CustomTypography type="textM" className={styles.burn}>
+            {dayjs(match.dateStart).locale("ru").format("DD-MM-YYYY")}
           </CustomTypography>
           <div className={styles.vsEnemy}>
-            <CustomTypography
-              type="title"
-              className={styles.burn}
-            >
+            <CustomTypography type="title" className={styles.burn}>
               БУРАН
             </CustomTypography>
-            <CustomTypography
-              type="h1"
-              className={styles.vs}
-            >
+            <CustomTypography type="h1" className={styles.vs}>
               VS
             </CustomTypography>
-            <CustomTypography
-              type="title"
-              className={styles.enemy}
-            >
+            <CustomTypography type="title" className={styles.enemy}>
               {match.enemy}
             </CustomTypography>
           </div>
-          <CustomTypography
-            type="title"
-            style={{ fontWeight: 700 }}
-          >
+          <CustomTypography type="title" style={{ fontWeight: 700 }}>
             {goal}:{goalEnemy}
           </CustomTypography>
           <div className={styles.item}>
-            <CustomTypography
-              type="textM"
-              className={styles.burn}
-            >
+            <CustomTypography type="textM" className={styles.burn}>
               Главные моменты матча
             </CustomTypography>
             <div className={styles.actionWrapper}>
