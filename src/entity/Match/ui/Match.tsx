@@ -1,4 +1,4 @@
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { List, Steps } from "antd";
 import { StepsProps } from "antd/lib";
 import { Mousewheel, Pagination } from "swiper/modules";
@@ -17,11 +17,25 @@ import Delete from "@/assets/delete.svg?react";
 import Plus from "@/assets/plus.svg?react";
 import useDeleteMatch from "../module/useDeleteMatch";
 import AddMatchActivitesForm from "@/features/AddMatchActivitesForm/ui/AddMatchActivitesForm";
+import dayjs from "dayjs";
 
 const Match = ({ match, setMatch }: IMatchProps) => {
   const { isAuth } = useAuthContext();
   const { deleteMatch } = useDeleteMatch();
   const [open, setOpen] = useState(false);
+  const [goal, setGoal] = useState(0);
+  const [goalEnemy, setGoalEnemy] = useState(0);
+
+  useEffect(() => {
+    setGoal(0);
+    setGoalEnemy(0);
+    match.actions.map((el) => {
+      if (el.action === "GOAL") {
+        if (!el.enemy) setGoal((prev) => prev + 1);
+        else setGoalEnemy((prev) => prev + 1);
+      }
+    });
+  }, [match]);
 
   const onDelete = async () => {
     await deleteMatch(match.id);
@@ -98,6 +112,12 @@ const Match = ({ match, setMatch }: IMatchProps) => {
           </Swiper>
         </div>
         <div className={styles.item}>
+          <CustomTypography
+            type="textM"
+            className={styles.burn}
+          >
+            {dayjs(match.dateStart).locale("ru").format("YYYY-MM-DD")}
+          </CustomTypography>
           <div className={styles.vsEnemy}>
             <CustomTypography
               type="title"
@@ -118,6 +138,12 @@ const Match = ({ match, setMatch }: IMatchProps) => {
               {match.enemy}
             </CustomTypography>
           </div>
+          <CustomTypography
+            type="title"
+            style={{ fontWeight: 700 }}
+          >
+            {goal}:{goalEnemy}
+          </CustomTypography>
           <div className={styles.item}>
             <CustomTypography
               type="textM"
