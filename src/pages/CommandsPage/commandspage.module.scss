@@ -1,11 +1,12 @@
 @import "@/app/styles/utils/variables";
 @import "@/app/styles/utils/media";
 
-.cpage{
-  position: relative;
-  width: 100%;
-  max-width: 1520px;
-  min-width: 320px;
-  margin: 80px auto;
-  padding: 0 var(--inner-pd);
+.cpage {
+  margin-top: 80px;
+  @include media-tablet {
+    margin-top: 60px;
+  }
+  @include media-mobile {
+    margin-top: 50px;
+  }
 }

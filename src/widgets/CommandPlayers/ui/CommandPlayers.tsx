@@ -17,12 +17,18 @@ const CommandPlayers = () => {
 
   return (
     <div className={style.cplayers}>
-      <CustomTypography type="h2" className={style.cplayers__title}>
-        НАША КОМАНДА
+      <CustomTypography
+        type="h2"
+        className={style.cplayers__title}
+      >
+        Наша команда:
       </CustomTypography>
       <div className={style.cplayers__container}>
         {players.map((el: CommandPlayersProps) => (
-          <CommandsPlayer key={el.player.id} player={el.player} />
+          <CommandsPlayer
+            key={el.player.id}
+            player={el.player}
+          />
         ))}
       </div>
     </div>

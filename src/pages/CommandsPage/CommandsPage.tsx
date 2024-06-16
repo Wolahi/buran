@@ -4,7 +4,9 @@ import CommandPlayers from "@/widgets/CommandPlayers/ui/CommandPlayers";
 
 const CommandsPage = () => (
   <div className={style.cpage}>
-    <CommandPlayers />
+    <div className="inner">
+      <CommandPlayers />
+    </div>
   </div>
 );
 

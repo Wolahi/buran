@@ -1,21 +1,22 @@
 @import "@/app/styles/utils/variables";
 @import "@/app/styles/utils/media";
 
-.cplayers{
+.cplayers {
   padding: 20px 16px;
   background-color: #f5f2f5;
   border-radius: 18px;
-  &__title{
+  &__title {
     display: flex;
     text-align: center;
     flex-direction: column;
     justify-content: center;
-    padding-bottom: 10px;
+    margin-bottom: 20px;
     animation: appear 1.5s 1;
   }
-  &__container{
+  &__container {
     display: grid;
     gap: 20px;
+    animation: appear 1.5s 1;
   }
   @keyframes appear {
     0% {
@@ -23,7 +24,7 @@
       opacity: 0;
     }
     100% {
-      margin-bottom: 0;
+      margin-top: 0;
     }
   }
 }
