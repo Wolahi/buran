@@ -10,7 +10,7 @@ const useGetCommands = () => {
 
   useEffect(() => {
     (async () => {
-      const res = await $api.get("/api/seasons/stats/players", {
+      const res = await $api.get("/api/players", {
         params: {
           season: id,
         },

@@ -5,19 +5,15 @@ import { $api } from "@/shared/api/apiInstance.ts";
 import { IPlayerSimpleOutput } from "@/shared/config/interfaces/IPlayerSimpleOutput";
 
 const useGetPlayerById = () => {
-  const { seasonId, playerId } = useParams();
+  const { playerId } = useParams();
   const [player, setPlayer] = useState<IPlayerSimpleOutput>();
 
   useEffect(() => {
     (async () => {
-      const res = await $api.get(`/api/players/${playerId}`, {
-        params: {
-          season: seasonId,
-        },
-      });
+      const res = await $api.get(`/api/players/${playerId}`, {});
       setPlayer(res.data);
     })();
-  }, [seasonId, playerId]);
+  }, [playerId]);
 
   return { player };
 };

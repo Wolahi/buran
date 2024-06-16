@@ -9,6 +9,7 @@ type PlayerDetailProps = {
 const PlayerDetail = ({ player }: PlayerDetailProps) => {
   return (
     <div className={styles.news}>
+      <div>{player?.name}</div>
       <div>{player?.biography}</div>
       <div>{player?.number}</div>
       <div>{player?.type}</div>
