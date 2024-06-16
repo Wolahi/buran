@@ -1,0 +1,30 @@
+@import "@/app/styles/utils/variables";
+@import "@/app/styles/utils/media";
+
+.cplayers {
+  padding: 20px 16px;
+  background-color: #f5f2f5;
+  border-radius: 18px;
+  &__title {
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+    justify-content: center;
+    margin-bottom: 20px;
+    animation: appear 1.5s 1;
+  }
+  &__container {
+    display: grid;
+    gap: 20px;
+    animation: appear 1.5s 1;
+  }
+  @keyframes appear {
+    0% {
+      color: black;
+      opacity: 0;
+    }
+    100% {
+      margin-top: 0;
+    }
+  }
+}
