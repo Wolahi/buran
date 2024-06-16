@@ -12,8 +12,17 @@ import { IMatchProps } from "@/entity/Match/ui/interfaces/IMatchProps.ts";
 import { translateAction } from "@/shared/config/translateRoleTeam.ts";
 import { CustomTypography } from "@/shared/ui/CustomTypography";
 import PlayerImage from "@/shared/ui/PlayerImage/ui/PlayerImage.tsx";
+import { useAuthContext } from "@/app/module/hooks/useAuthContext";
+import Delete from "@/assets/delete.svg?react";
+import useDeleteMatch from "../module/useDeleteMatch";
 
-const Match = ({ match }: IMatchProps) => {
+const Match = ({ match, setMatch }: IMatchProps) => {
+  const { isAuth } = useAuthContext();
+  const { deleteMatch } = useDeleteMatch();
+  const onDelete = async () => {
+    await deleteMatch(match.id);
+    setMatch((prev) => prev.filter((val) => match.id !== val.id));
+  };
   const itemsAction: StepsProps[] = useMemo(
     () =>
       match.actions.map((action) =>
@@ -120,6 +129,15 @@ const Match = ({ match }: IMatchProps) => {
             </div>
           </div>
         </div>
+        {isAuth && (
+          <button
+            type="button"
+            className={styles.match__delete}
+            onClick={onDelete}
+          >
+            <Delete />
+          </button>
+        )}
       </div>
     </List.Item>
   );

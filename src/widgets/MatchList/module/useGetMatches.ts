@@ -19,7 +19,7 @@ const useGetMatches = () => {
     })();
   }, [id]);
 
-  return { matches };
+  return { matches, setMatches };
 };
 
 export default useGetMatches;
