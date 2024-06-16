@@ -7,4 +7,6 @@ export interface IPlayerSimpleOutput {
   type: EPlayerType;
   url: string;
   biography: string;
+  birthDate: string;
+  img: string;
 }

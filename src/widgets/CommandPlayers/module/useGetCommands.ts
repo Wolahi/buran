@@ -19,7 +19,7 @@ const useGetCommands = () => {
     })();
   }, [id]);
 
-  return { players };
+  return { players, setPlayers };
 };
 
 export default useGetCommands;

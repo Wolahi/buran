@@ -15,7 +15,5 @@ export const translateRolePlayer: Record<EPlayerType, string> = {
   [EPlayerType.UNIVERSAL]: "УНЕВЕРСАЛ",
   [EPlayerType.CAPTAIN]: "КАПТИАН",
   [EPlayerType.FORWARD]: "НАПАДАЮЩИЙ",
-  [EPlayerType.COACH]: "ТРЕНЕР",
-  [EPlayerType.MEDIC]: "МЕДИК",
   [EPlayerType.GOALKEEPER]: "ВРАТАРЬ",
 };

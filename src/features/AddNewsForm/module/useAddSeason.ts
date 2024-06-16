@@ -7,7 +7,7 @@ import { INews } from "@/shared/config/interfaces/INews.ts";
 const useAddNews = () => {
   const addNews = async (
     data: IAddNewsInput,
-    seasonId: string,
+    seasonId: string
   ): Promise<AxiosResponse<INews>> =>
     await $api.post("/api/seasons/news", data, {
       params: {

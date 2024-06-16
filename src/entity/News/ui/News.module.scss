@@ -1,7 +1,7 @@
 @import "@/app/styles/utils/media";
 @import "@/app/styles/utils/variables";
-
-.news {
+.cardWrapper {
+  position: relative;
   overflow: hidden;
   @include media-mobile {
     width: 100%;
@@ -18,6 +18,9 @@
       }
     }
   }
+}
+
+.news {
   &__card {
     height: 100%;
   }
@@ -66,6 +69,25 @@
         width: 18px;
         height: 18px;
       }
+    }
+  }
+  &__delete {
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    z-index: 100;
+    @media (hover: hover) {
+      svg {
+        transform: scale(1.05);
+      }
+    }
+    svg {
+      color: red;
+      width: 36px;
+      height: 36px;
     }
   }
   &__title {

@@ -4,6 +4,4 @@ export enum EPlayerType {
   FORWARD = "FORWARD",
   UNIVERSAL = "UNIVERSAL",
   CAPTAIN = "CAPTAIN",
-  COACH = "COACH",
-  MEDIC = "MEDIC",
 }
