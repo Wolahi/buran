@@ -7,6 +7,7 @@ import {
   MainPage,
   NewsDetailPage,
   NotFoundPage,
+  PlayerPage,
   SeasonPage,
 } from "@/pages";
 
@@ -15,6 +16,7 @@ export enum ERoute {
   Main = "/",
   AdminLogin = "/login",
   CommandsPage = "/commands",
+  PlayerPage = "/commands/player/:playerId",
   SeasonPage = "/season/:id",
   newsDetailPage = "/news/:seasonId/:newsId",
   NotFound = "*",
@@ -55,6 +57,11 @@ export const routes: Record<string, IRouteProps> = {
   CommandsPage: {
     path: ERoute.CommandsPage,
     element: <CommandsPage />,
+    isAdmin: false,
+  },
+  PlayerPage: {
+    path: ERoute.PlayerPage,
+    element: <PlayerPage />,
     isAdmin: false,
   },
   NotFound: {

@@ -1,0 +1,11 @@
+@import "@/app/styles/utils/variables";
+@import "@/app/styles/utils/media";
+
+.stats {
+  display: grid;
+  gap: 18px;
+  @include media-mobile {
+    gap: 16px;
+    padding: 0 16px;
+  }
+}

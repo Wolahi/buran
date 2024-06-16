@@ -6,6 +6,7 @@
 }
 
 .dropdown {
+  visibility: hidden;
   position: absolute;
   top: 100%;
   left: 50%;
@@ -16,7 +17,7 @@
   box-shadow: 0 3px 15px rgb(135 151 155 / 0.25);
   opacity: 0;
   transform: translateY(4px) translateX(-50%);
-  transition: opacity 0.3s ease;
+  transition: all 0.3s ease;
   z-index: 2;
   @include media-tablet {
     padding: 20px 25px;
@@ -64,6 +65,7 @@
     }
   }
   &.active {
+    visibility: visible;
     opacity: 1;
     ~ .dropdown__button {
       &::after {
