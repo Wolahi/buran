@@ -1,5 +1,6 @@
 import styles from "./PlayerDetail.module.scss";
 
+import { EPlayerType } from "@/shared/config/interfaces/EPlayerType.ts";
 import { IPlayerSimpleOutput } from "@/shared/config/interfaces/IPlayerSimpleOutput";
 import { translateRolePlayer } from "@/shared/config/translateRoleTeam.ts";
 
@@ -20,7 +21,7 @@ const PlayerDetail = ({ player }: PlayerDetailProps) => (
             <div className={styles.pdetail__number}>{player?.number}</div>
           </div>
           <div className={styles.pdetail__role}>
-            {translateRolePlayer[player?.type]}
+            {translateRolePlayer[player?.type as EPlayerType]}
           </div>
           <div className={styles.pdetail__bio}>{player?.biography}</div>
         </div>

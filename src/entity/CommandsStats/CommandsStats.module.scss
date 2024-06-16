@@ -1,0 +1,31 @@
+@import "@/app/styles/utils/variables";
+@import "@/app/styles/utils/media";
+
+.CommandsStat {
+  box-shadow: 0 3px 15px rgba(125, 212, 234, 0.3) !important;
+  @include media-custom(980px) {
+    margin: 0 auto !important;
+    max-width: 770px !important;
+  }
+  @include media-custom(850px) {
+    max-width: 650px !important;
+  }
+  @include media-mobile {
+    max-width: 490px !important;
+  }
+  @include media-custom(550px) {
+    max-width: 440px !important;
+  }
+  @include media-custom(510px) {
+    max-width: 350px !important;
+  }
+  @include media-custom(410px) {
+    max-width: 300px !important;
+  }
+  @include media-custom(374px) {
+    max-width: 240px !important;
+  }
+  &__text {
+    text-align: center;
+  }
+}

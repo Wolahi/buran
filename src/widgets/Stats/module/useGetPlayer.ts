@@ -8,6 +8,7 @@ import { IActions } from "@/shared/config/interfaces/IActions";
 const useGetBestPlayer = () => {
   const { id } = useParams();
   const [player, setPlayer] = useState<IPlayerSimpleOutput>();
+
   const [actions, setActions] = useState<IActions>();
 
   useEffect(() => {
@@ -19,7 +20,6 @@ const useGetBestPlayer = () => {
       });
       setPlayer(res.data.bestPlayer.player);
       setActions(res.data.bestPlayer.actions);
-      console.log(res.data.bestPlayer.actions);
     })();
   }, [id]);
 
