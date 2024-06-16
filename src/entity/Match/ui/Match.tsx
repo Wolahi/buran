@@ -72,6 +72,7 @@ const Match = ({ match }: IMatchProps) => {
             pagination={{
               clickable: true,
             }}
+            grabCursor
             modules={[Mousewheel, Pagination]}
             className={styles.slider}
           >
@@ -90,8 +91,18 @@ const Match = ({ match }: IMatchProps) => {
             >
               БУРАН
             </CustomTypography>
-            <CustomTypography type="h1">VS</CustomTypography>
-            <CustomTypography type="title">{match.enemy}</CustomTypography>
+            <CustomTypography
+              type="h1"
+              className={styles.vs}
+            >
+              VS
+            </CustomTypography>
+            <CustomTypography
+              type="title"
+              className={styles.enemy}
+            >
+              {match.enemy}
+            </CustomTypography>
           </div>
           <div className={styles.item}>
             <CustomTypography

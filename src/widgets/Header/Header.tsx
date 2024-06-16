@@ -20,7 +20,7 @@ const Header = () => {
           text: `Сезон ${season.title} гг.`,
           link: `/season/${season.title}`,
         }))
-        .splice(0, 2),
+        .splice(seasons.length - 2, 2),
     [seasons]
   );
 

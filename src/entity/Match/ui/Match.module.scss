@@ -48,7 +48,9 @@
   .burn {
     color: $lightSkyBlue;
   }
-
+  .enemy {
+    color: rgb(254, 86, 86);
+  }
   img {
     height: 125px;
   }
@@ -121,5 +123,15 @@
   img {
     border-radius: 50%;
     object-fit: cover;
+  }
+}
+
+.vs {
+  background-image: linear-gradient(to right, $lightSkyBlue, rgb(254, 86, 86));
+  color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+  @include media-mobile {
+    line-height: 1.1;
   }
 }
