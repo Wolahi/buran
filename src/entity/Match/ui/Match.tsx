@@ -1,4 +1,4 @@
-import { useMemo } from "react";
+import { useMemo, useState } from "react";
 import { List, Steps } from "antd";
 import { StepsProps } from "antd/lib";
 import { Mousewheel, Pagination } from "swiper/modules";
@@ -12,8 +12,22 @@ import { IMatchProps } from "@/entity/Match/ui/interfaces/IMatchProps.ts";
 import { translateAction } from "@/shared/config/translateRoleTeam.ts";
 import { CustomTypography } from "@/shared/ui/CustomTypography";
 import PlayerImage from "@/shared/ui/PlayerImage/ui/PlayerImage.tsx";
+import { useAuthContext } from "@/app/module/hooks/useAuthContext";
+import Delete from "@/assets/delete.svg?react";
+import Plus from "@/assets/plus.svg?react";
+import useDeleteMatch from "../module/useDeleteMatch";
+import AddMatchActivitesForm from "@/features/AddMatchActivitesForm/ui/AddMatchActivitesForm";
 
-const Match = ({ match }: IMatchProps) => {
+const Match = ({ match, setMatch }: IMatchProps) => {
+  const { isAuth } = useAuthContext();
+  const { deleteMatch } = useDeleteMatch();
+  const [open, setOpen] = useState(false);
+
+  const onDelete = async () => {
+    await deleteMatch(match.id);
+    setMatch((prev) => prev.filter((val) => match.id !== val.id));
+  };
+
   const itemsAction: StepsProps[] = useMemo(
     () =>
       match.actions.map((action) =>
@@ -120,6 +134,30 @@ const Match = ({ match }: IMatchProps) => {
             </div>
           </div>
         </div>
+        {isAuth && (
+          <>
+            <button
+              type="button"
+              className={styles.match__plus}
+              onClick={() => setOpen(true)}
+            >
+              <Plus />
+            </button>
+            <button
+              type="button"
+              className={styles.match__delete}
+              onClick={onDelete}
+            >
+              <Delete />
+            </button>
+          </>
+        )}
+        <AddMatchActivitesForm
+          setMatch={setMatch}
+          match={match}
+          open={open}
+          onClose={() => setOpen(false)}
+        />
       </div>
     </List.Item>
   );

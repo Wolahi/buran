@@ -7,7 +7,7 @@ export const translateAction: Record<EMatchAction, string> = {
   [EMatchAction.Swap]: "Обмен",
   [EMatchAction.Entry]: "Вход",
   [EMatchAction.Miss]: "Промах",
-  [EMatchAction.Bad]: "Проиграли?",
+  [EMatchAction.Bad]: "Штраф",
 };
 
 export const translateRolePlayer: Record<EPlayerType, string> = {
@@ -15,7 +15,5 @@ export const translateRolePlayer: Record<EPlayerType, string> = {
   [EPlayerType.UNIVERSAL]: "УНЕВЕРСАЛ",
   [EPlayerType.CAPTAIN]: "КАПТИАН",
   [EPlayerType.FORWARD]: "НАПАДАЮЩИЙ",
-  [EPlayerType.COACH]: "ТРЕНЕР",
-  [EPlayerType.MEDIC]: "МЕДИК",
   [EPlayerType.GOALKEEPER]: "ВРАТАРЬ",
 };

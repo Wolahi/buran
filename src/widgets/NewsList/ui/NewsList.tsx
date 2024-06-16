@@ -18,10 +18,17 @@ const NewsList = () => {
     <div className={styles.root}>
       <div className={styles.list}>
         {news.map((news) => (
-          <News key={news.id} news={news} />
+          <News
+            key={news.id}
+            news={news}
+            setNews={setNews}
+          />
         ))}
         {isAuth && (
-          <FloatButton icon={<PlusOutlined />} onClick={() => setOpen(true)} />
+          <FloatButton
+            icon={<PlusOutlined />}
+            onClick={() => setOpen(true)}
+          />
         )}
         <AddNewsForm
           setNews={setNews}
