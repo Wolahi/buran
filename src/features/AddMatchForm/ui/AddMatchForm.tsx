@@ -1,12 +1,5 @@
 import { Controller, useForm } from "react-hook-form";
-import {
-  ConsoleSqlOutlined,
-  LoadingOutlined,
-  PlusOutlined,
-} from "@ant-design/icons";
-import { Button, DatePicker, Drawer, Image, Input, Select, Upload } from "antd";
-import { RcFile } from "antd/es/upload";
-import TextArea from "antd/lib/input/TextArea";
+import { Button, DatePicker, Drawer, Input, Select } from "antd";
 import dayjs from "dayjs";
 
 import styles from "./AddMatchForm.module.scss";

@@ -7,7 +7,7 @@ export const translateAction: Record<EMatchAction, string> = {
   [EMatchAction.Swap]: "Обмен",
   [EMatchAction.Entry]: "Вход",
   [EMatchAction.Miss]: "Промах",
-  [EMatchAction.Bad]: "Проиграли?",
+  [EMatchAction.Bad]: "Штраф",
 };
 
 export const translateRolePlayer: Record<EPlayerType, string> = {

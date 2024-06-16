@@ -38,6 +38,32 @@
     width: 36px;
     height: 36px;
   }
+  @include media-mobile() {
+    right: 5px;
+  }
+}
+
+.match__plus {
+  position: absolute;
+  right: 20px;
+  bottom: 30px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  z-index: 100;
+  @media (hover: hover) {
+    svg {
+      transform: scale(1.05);
+    }
+  }
+  svg {
+    color: red;
+    width: 36px;
+    height: 36px;
+  }
+  @include media-tablet() {
+    bottom: 70px;
+  }
 }
 .slider {
   display: flex;
