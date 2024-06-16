@@ -49,6 +49,7 @@
     }
   }
   &__content {
+    width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
@@ -58,6 +59,7 @@
       justify-content: start;
     }
     @include media-mobile {
+      align-items: center;
     }
   }
   &__amplua {
@@ -67,6 +69,8 @@
     @include media-tablet {
     }
     @include media-mobile {
+      flex-direction: column;
+      margin: 0 auto;
       padding: 0 16px;
     }
   }
@@ -101,68 +105,37 @@
   }
 
   &__stats {
-    display: grid;
-    grid-template-columns: repeat(6, minmax(auto, 200px));
-    border: 2px solid #bebebe;
+    display: block !important;
+    width: 100%;
     @include media-tablet {
-      display: none;
-    }
-    @include media-mobile {
-      grid-template-columns: repeat(3, auto);
-      border: 0;
-      padding: 0 12px;
-      width: 100%;
+      display: none !important;
     }
     &Tablet {
-      display: none;
+      display: none !important;
       @include media-tablet {
-        margin-top: 15px;
-        display: grid;
+        margin: 15px auto 0;
+        display: block !important;
       }
-    }
-  }
-  &__col {
-    &:not(:last-child) {
-      border-right: 2px solid #bebebe;
+      @include media-tablet {
+        max-width: 940px !important;
+      }
+      @include media-custom(980px) {
+        max-width: 730px !important;
+      }
+      @include media-custom(850px) {
+        max-width: 650px !important;
+      }
       @include media-mobile {
-        border-right: 1px solid #bebebe;
+        max-width: 430px !important;
       }
-    }
-    @include media-mobile {
-      border-top: 1px solid #bebebe;
-      border-right: 1px solid #bebebe;
-      &:first-child {
-        border-left: 1px solid #bebebe;
+      @include media-custom(530px) {
+        max-width: 330px !important;
       }
-      &:nth-child(4) {
-        border-left: 1px solid #bebebe;
-        border-bottom: 1px solid #bebebe;
+      @include media-custom(430px) {
+        max-width: 270px !important;
       }
-      &:nth-child(5) {
-        border-left: 1px solid #bebebe;
-        border-bottom: 1px solid #bebebe;
-      }
-      &:nth-child(6) {
-        border-left: 1px solid #bebebe;
-        border-bottom: 1px solid #bebebe;
-      }
-    }
-    &Head {
-      padding: 20px 0;
-      font: 700 24px/1.3 $font;
-      border-bottom: 2px solid #bebebe;
-      @include media-mobile {
-        padding: 16px 0;
-        border-bottom: 1px solid #bebebe;
-        font-size: 16px;
-      }
-    }
-    &Val {
-      padding: 20px 0;
-      font: 400 24px/1.3 $font;
-      @include media-mobile {
-        padding: 16px 0;
-        font-size: 16px;
+      @include media-custom(374px) {
+        max-width: 220px !important;
       }
     }
   }
