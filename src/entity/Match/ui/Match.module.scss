@@ -86,15 +86,27 @@
   align-items: center;
   justify-content: center;
   gap: 20px;
+  @include media-custom(500px) {
+    flex-direction: column;
+    gap: 0;
+  }
   @include media-custom(374px) {
     flex-direction: column;
     gap: 0;
   }
   .burn {
     color: $lightSkyBlue;
+    width: 150px;
+    @include media-custom(500px) {
+      width: unset;
+    }
   }
   .enemy {
     color: rgb(254, 86, 86);
+    width: 150px;
+    @include media-custom(500px) {
+      width: unset;
+    }
   }
   img {
     height: 125px;
