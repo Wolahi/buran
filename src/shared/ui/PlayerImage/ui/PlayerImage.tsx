@@ -16,7 +16,10 @@ const PlayerImage = ({ player }: IPlayerImageProps) => (
       <h3 className={styles.video__itemTitle}>{player.name}</h3>
     </div>
     <div className={styles.video__box}>
-      <img src={player.url} alt={player.name} />
+      <img
+        src={player.url}
+        alt={player.name}
+      />
     </div>
   </div>
 );

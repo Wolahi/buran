@@ -14,7 +14,7 @@ export enum ERoute {
   Index = "/index",
   Main = "/",
   AdminLogin = "/login",
-  CommandsPage = "/commands",
+  CommandsPage = "/commands/:id",
   SeasonPage = "/season/:id",
   newsDetailPage = "/news/:seasonId/:newsId",
   NotFound = "*",

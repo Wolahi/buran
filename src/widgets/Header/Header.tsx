@@ -53,7 +53,15 @@ const Header = () => {
                   mods="white"
                 />
               </div>
-              <Link to="/commands">Команда</Link>
+              <Link
+                to={
+                  seasons.map((season) => `/commands/${season.title}`)[
+                    seasons.length - 3
+                  ]
+                }
+              >
+                Команда
+              </Link>
               {isAuth && "Админ"}
             </nav>
           </div>
