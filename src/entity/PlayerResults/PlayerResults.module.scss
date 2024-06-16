@@ -17,6 +17,13 @@
     padding: 0 0 12px;
     margin-top: 10px;
   }
+  @media (hover: hover) {
+    &:hover {
+      color: inherit;
+      box-shadow: 0 3px 30px rgb(135 151 155 / 0.15);
+      transform: scale(1.01);
+    }
+  }
   &__head {
     display: flex;
     gap: 24px;
@@ -84,7 +91,7 @@
     }
   }
   &__type {
-    font: 700 20px / 1 $font;
+    font: 700 22px / 1 $font;
     @include media-tablet {
       font-size: 18px;
     }

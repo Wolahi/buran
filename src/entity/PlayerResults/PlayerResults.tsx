@@ -2,9 +2,14 @@ import { CustomTypography } from "@/shared/ui/CustomTypography";
 import styles from "./PlayerResults.module.scss";
 
 import { PlayerResultsProps } from "./interfaces/PlayerResultsProps";
+import { translateRolePlayer } from "@/shared/config/translateRoleTeam";
+import { Link } from "react-router-dom";
 
 const PlayerResults = ({ player, actions }: PlayerResultsProps) => (
-  <div className={styles.PlayerResults}>
+  <Link
+    to={`/commands/player/${player?.id}`}
+    className={styles.PlayerResults}
+  >
     <div className={styles.PlayerResults__head}>
       <div className={styles.PlayerResults__image}>
         <img
@@ -30,7 +35,7 @@ const PlayerResults = ({ player, actions }: PlayerResultsProps) => (
             type="textMs"
             className={styles.PlayerResults__type}
           >
-            {player?.type}
+            {translateRolePlayer[player?.type]}
           </CustomTypography>
         </div>
         <div className={styles.PlayerResults__stats}>
@@ -89,7 +94,7 @@ const PlayerResults = ({ player, actions }: PlayerResultsProps) => (
         <div className={styles.PlayerResults__colVal}>{actions?.ENTRY}</div>
       </div>
     </div>
-  </div>
+  </Link>
 );
 
 export default PlayerResults;

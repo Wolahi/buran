@@ -4,12 +4,19 @@
 .cpage {
   &__container {
     display: flex;
-    flex-direction: row;
     padding: 15px 12px;
     gap: 20px;
     border-radius: 18px;
-    background-color: $white;
+    background: $white;
     animation: Afade 2s 1;
+    transition: all 0.3s ease-in;
+    cursor: pointer;
+    @media (hover: hover) {
+      &:hover {
+        box-shadow: 0 3px 30px rgb(135 151 155 / 0.15);
+        transform: scale(1.01);
+      }
+    }
 
     @include media-mobile {
       max-width: 735px;
@@ -26,6 +33,32 @@
     @include media-custom(458px) {
       display: grid;
       justify-items: center;
+    }
+  }
+  &__wrapper {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    width: 190px;
+    height: 300px;
+    padding: 10px;
+    border-radius: 21px;
+  }
+  &__image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1;
+    border-radius: 21px;
+    overflow: hidden;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
     }
   }
   &__name {
@@ -45,6 +78,7 @@
     font: 52px/1 $font;
     color: $lightSkyBlue;
     margin-bottom: 5px;
+    transition: all 0.3s ease-in;
     @include media-tablet {
       font: 32px/1.3 $font;
     }
