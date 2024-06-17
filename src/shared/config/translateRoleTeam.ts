@@ -2,7 +2,7 @@ import { EMatchAction } from "@/shared/config/interfaces/EMatchAction.ts";
 import { EPlayerType } from "@/shared/config/interfaces/EPlayerType.ts";
 
 export const translateAction: Record<EMatchAction, string> = {
-  [EMatchAction.Fine]: "Пропусток",
+  [EMatchAction.Fine]: "Защита",
   [EMatchAction.Goal]: "Гол",
   [EMatchAction.Swap]: "Обмен",
   [EMatchAction.Entry]: "Вход",

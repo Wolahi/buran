@@ -8,7 +8,7 @@ import useGetCommandStat from "../module/useGetCommandStat";
 const Stats = () => {
   const { player, actions } = useGetBestPlayer();
 
-  const CommandActions = useGetCommandStat();
+  const { commandsStats, setCommandsStats } = useGetCommandStat();
   return (
     <div className={style.stats}>
       <CustomTypography type="title">Лучший игрок:</CustomTypography>
@@ -19,7 +19,10 @@ const Stats = () => {
       <CustomTypography type="title">
         Статистика в текущем сезоне:
       </CustomTypography>
-      <CommandsStats actions={CommandActions.actions} />
+      <CommandsStats
+        commandsStats={commandsStats}
+        setCommandsStats={setCommandsStats}
+      />
     </div>
   );
 };
