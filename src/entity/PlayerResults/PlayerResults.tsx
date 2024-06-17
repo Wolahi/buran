@@ -6,35 +6,20 @@ import { translateRolePlayer } from "@/shared/config/translateRoleTeam";
 import { Link } from "react-router-dom";
 import { Table, type TableProps } from "antd";
 import { EPlayerType } from "@/shared/config/interfaces/EPlayerType";
+const columns: TableProps["columns"] = [
+  {
+    key: "GOAL",
+    title: "Голы",
+    dataIndex: "GOAL",
+  },
+  { key: "SWAP", title: "Замены", dataIndex: "SWAP" },
+  { key: "BAD", title: "Штрафы", dataIndex: "BAD" },
+  { key: "MISS", title: "Промахи", dataIndex: "MISS" },
+  { key: "FINE", title: "Защита", dataIndex: "FINE" },
+  { key: "ENTRY", title: "Перехват", dataIndex: "ENTRY" },
+];
 
 const PlayerResults = ({ player, actions }: PlayerResultsProps) => {
-  const columns: TableProps["columns"] = [
-    {
-      title: "Голы",
-      dataIndex: "GOAL",
-    },
-    {
-      title: "Замены",
-      dataIndex: "SWAP",
-    },
-    {
-      title: "Штрафы",
-      dataIndex: "BAD",
-    },
-    {
-      title: "Промахи",
-      dataIndex: "MISS",
-    },
-    {
-      title: "Защита",
-      dataIndex: "FINE",
-    },
-    {
-      title: "Перехват",
-      dataIndex: "ENTRY",
-    },
-  ];
-
   return (
     <Link
       to={`/commands/player/${player?.id}`}

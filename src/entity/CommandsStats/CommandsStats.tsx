@@ -1,51 +1,112 @@
 import styles from "./CommandsStats.module.scss";
 
-import { Table, type TableProps } from "antd";
+import { FloatButton, Table, type TableProps } from "antd";
 import { CommandsStatsProps } from "./interfaces/CommandsStatsProps";
+import { useAuthContext } from "@/app/module/hooks/useAuthContext";
+import { useState } from "react";
+import { PlusOutlined } from "@ant-design/icons";
+import AddStatsActivitesForm from "@/features/AddStatActivitesForm/ui/AddStatActivitesForm";
 
-const CommandsStats = ({ actions }: CommandsStatsProps) => {
-  const columns: TableProps["columns"] = [
-    {
-      title: "Голы",
-      dataIndex: "GOAL",
-      render: (val) => <span className={styles.CommandsStat__text}>{val}</span>,
-    },
-    {
-      title: "Замены",
-      dataIndex: "SWAP",
-      render: (val) => <span className={styles.CommandsStat__text}>{val}</span>,
-    },
-    {
-      title: "Штрафы",
-      dataIndex: "BAD",
-      render: (val) => <span className={styles.CommandsStat__text}>{val}</span>,
-    },
-    {
-      title: "Промахи",
-      dataIndex: "MISS",
-      render: (val) => <span className={styles.CommandsStat__text}>{val}</span>,
-    },
-    {
-      title: "Защита",
-      dataIndex: "FINE",
-      render: (val) => <span className={styles.CommandsStat__text}>{val}</span>,
-    },
-    {
-      title: "Перехват",
-      dataIndex: "ENTRY",
-      render: (val) => <span className={styles.CommandsStat__text}>{val}</span>,
-    },
-  ];
+const columns: TableProps["columns"] = [
+  {
+    key: "n",
+    title: "Номер",
+    dataIndex: "n",
+    render: (val) => <span className={styles.CommandsStat__text}>{val}</span>,
+  },
+  {
+    key: "i",
+    title: "Игры",
+    dataIndex: "i",
+    render: (val) => <span className={styles.CommandsStat__text}>{val}</span>,
+  },
+  {
+    key: "v",
+    title: "Выйгранные",
+    dataIndex: "v",
+    render: (val) => <span className={styles.CommandsStat__text}>{val}</span>,
+  },
+  {
+    key: "vo",
+    title: "Выйгранные овертайм",
+    dataIndex: "vo",
+    render: (val) => <span className={styles.CommandsStat__text}>{val}</span>,
+  },
+  {
+    key: "vb",
+    title: "Выйгранные буллеты",
+    dataIndex: "vb",
+    render: (val) => <span className={styles.CommandsStat__text}>{val}</span>,
+  },
+  {
+    key: "pb",
+    title: "Проигранные буллеты",
+    dataIndex: "pb",
+    render: (val) => <span className={styles.CommandsStat__text}>{val}</span>,
+  },
+  {
+    key: "po",
+    title: "Проигранные овертаймы",
+    dataIndex: "po",
+    render: (val) => <span className={styles.CommandsStat__text}>{val}</span>,
+  },
+  {
+    key: "p",
+    title: "Проигранные",
+    dataIndex: "p",
+    render: (val) => <span className={styles.CommandsStat__text}>{val}</span>,
+  },
+  {
+    key: "sh",
+    title: "Шайбы",
+    dataIndex: "sh",
+    render: (val) => <span className={styles.CommandsStat__text}>{val}</span>,
+  },
+  {
+    key: "p",
+    title: "O",
+    dataIndex: "o",
+    render: (val) => <span className={styles.CommandsStat__text}>{val}</span>,
+  },
+  {
+    key: "pero",
+    title: "% очков",
+    dataIndex: "pero",
+    render: (val) => <span className={styles.CommandsStat__text}>{val}</span>,
+  },
+];
+
+const CommandsStats = ({
+  commandsStats,
+  setCommandsStats,
+}: CommandsStatsProps) => {
+  const { isAuth } = useAuthContext();
+  const [open, setOpen] = useState(false);
 
   return (
-    <Table
-      columns={columns}
-      dataSource={[actions]}
-      pagination={false}
-      bordered
-      scroll={{ x: 820 }}
-      className={styles.CommandsStat}
-    />
+    <>
+      <Table
+        columns={columns}
+        dataSource={[commandsStats]}
+        pagination={false}
+        bordered
+        scroll={{ x: 820 }}
+        className={styles.CommandsStat}
+      />
+      {isAuth && (
+        <>
+          <FloatButton
+            icon={<PlusOutlined />}
+            onClick={() => setOpen(true)}
+          />
+        </>
+      )}
+      <AddStatsActivitesForm
+        setCommandsStats={setCommandsStats}
+        open={open}
+        onClose={() => setOpen(false)}
+      />
+    </>
   );
 };
 

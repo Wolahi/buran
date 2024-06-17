@@ -3,7 +3,7 @@
 
 .CommandsStat {
   box-shadow: 0 3px 15px rgba(125, 212, 234, 0.3) !important;
-  @include media-custom(980px) {
+  @include media-tablet {
     margin: 0 auto !important;
     max-width: 770px !important;
   }

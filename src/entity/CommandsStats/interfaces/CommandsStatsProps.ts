@@ -1,5 +1,7 @@
-import { IActions } from "@/shared/config/interfaces/IActions";
+import { ICommandStats } from "@/shared/config/interfaces/ICommandStats";
+import { Dispatch, SetStateAction } from "react";
 
 export interface CommandsStatsProps {
-  actions?: IActions;
+  commandsStats?: ICommandStats;
+  setCommandsStats: Dispatch<SetStateAction<ICommandStats | undefined>>;
 }
