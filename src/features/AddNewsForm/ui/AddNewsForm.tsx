@@ -26,7 +26,7 @@ const AddNewsForm = ({ open, onClose, setNews }: IDrawerNewsProps) => {
   const { id } = useParams();
 
   const onSubmit = async (data: IAddNewsForm) => {
-    if (image && id) {
+    if (image && id && image.uuid) {
       const tempData: IAddNewsInput = {
         ...data,
         date: dayjs(data.date).format("YYYY-MM-DD"),

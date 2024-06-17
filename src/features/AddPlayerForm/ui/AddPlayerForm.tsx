@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { Controller, useForm } from "react-hook-form";
 import { LoadingOutlined, PlusOutlined } from "@ant-design/icons";
 import { Button, DatePicker, Drawer, Image, Input, Select, Upload } from "antd";
@@ -5,16 +6,17 @@ import { RcFile } from "antd/es/upload";
 import TextArea from "antd/lib/input/TextArea";
 import dayjs from "dayjs";
 
-import styles from "./AddPlayerForm.module.scss";
+import useSubmit from "../module/useSubmit";
 
-import useImageStorage from "@/shared/module/useImageStorage.ts";
-import { CustomTypography } from "@/shared/ui/CustomTypography";
 import { IAddPlayerForm } from "./interfaces/IAddPlayerForm";
 import { IDrawerPlayerProps } from "./interfaces/IDrawerNewsProps";
-import { translateRolePlayer } from "@/shared/config/translateRoleTeam";
+
+import styles from "./AddPlayerForm.module.scss";
+
 import { EPlayerType } from "@/shared/config/interfaces/EPlayerType";
-import { useEffect } from "react";
-import useSubmit from "../module/useSubmit";
+import { translateRolePlayer } from "@/shared/config/translateRoleTeam";
+import useImageStorage from "@/shared/module/useImageStorage.ts";
+import { CustomTypography } from "@/shared/ui/CustomTypography";
 import useGetPlayerById from "@/widgets/PlayerDetail/module/useGetPlayerById";
 
 dayjs.locale("ru");
@@ -34,7 +36,7 @@ const AddPlayerForm = ({
     image,
     setPlayer,
     setImage,
-    reset
+    reset,
   );
 
   useEffect(() => {
@@ -68,14 +70,8 @@ const AddPlayerForm = ({
   };
 
   return (
-    <Drawer
-      open={open}
-      onClose={onClose}
-    >
-      <form
-        className={styles.root}
-        onSubmit={handleSubmit(onSubmit)}
-      >
+    <Drawer open={open} onClose={onClose}>
+      <form className={styles.root} onSubmit={handleSubmit(onSubmit)}>
         <CustomTypography type="textM">
           {player ? "Редактирование игрока" : "Добавление игрока"}
         </CustomTypography>
@@ -87,10 +83,7 @@ const AddPlayerForm = ({
               showUploadList={false}
               action={handleChangeImage}
             >
-              <button
-                style={{ border: 0, background: "none" }}
-                type="button"
-              >
+              <button style={{ border: 0, background: "none" }} type="button">
                 {loading ? <LoadingOutlined /> : <PlusOutlined />}
                 <div style={{ marginTop: 8 }}>Загрузить</div>
               </button>
@@ -101,11 +94,7 @@ const AddPlayerForm = ({
               className={styles.imagePreview}
               onClick={deleteImage}
             >
-              <Image
-                src={image.url}
-                alt="fd"
-                preview={false}
-              />
+              <Image src={image.url} alt="fd" preview={false} />
             </Button>
           )}
         </div>
@@ -145,10 +134,7 @@ const AddPlayerForm = ({
               <CustomTypography type="subtitle">
                 Игровой номер игрока
               </CustomTypography>
-              <Input
-                type="number"
-                {...field}
-              />
+              <Input type="number" {...field} />
             </div>
           )}
         />
@@ -170,18 +156,12 @@ const AddPlayerForm = ({
           render={({ field }) => (
             <div className={styles.items}>
               <CustomTypography type="subtitle">Дата рождения</CustomTypography>
-              <DatePicker
-                {...field}
-                value={dayjs(field.value)}
-              />
+              <DatePicker {...field} value={dayjs(field.value)} />
             </div>
           )}
         />
 
-        <Button
-          type="primary"
-          htmlType="submit"
-        >
+        <Button type="primary" htmlType="submit">
           {player ? "Обноваить" : "Создать"}
         </Button>
       </form>
