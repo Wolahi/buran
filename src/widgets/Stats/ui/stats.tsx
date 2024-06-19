@@ -1,9 +1,11 @@
-import PlayerResults from "@/entity/PlayerResults/PlayerResults";
-import style from "./stats.module.scss";
-import useGetBestPlayer from "../module/useGetPlayer";
-import { CustomTypography } from "@/shared/ui/CustomTypography";
-import CommandsStats from "@/entity/CommandsStats/CommandsStats";
 import useGetCommandStat from "../module/useGetCommandStat";
+import useGetBestPlayer from "../module/useGetPlayer";
+
+import style from "./stats.module.scss";
+
+import CommandsStats from "@/entity/CommandsStats/CommandsStats";
+import PlayerResults from "@/entity/PlayerResults/PlayerResults";
+import { CustomTypography } from "@/shared/ui/CustomTypography";
 
 const Stats = () => {
   const { player, actions } = useGetBestPlayer();
@@ -12,10 +14,7 @@ const Stats = () => {
   return (
     <div className={style.stats}>
       <CustomTypography type="title">Лучший игрок:</CustomTypography>
-      <PlayerResults
-        player={player}
-        actions={actions}
-      />
+      <PlayerResults player={player} actions={actions} />
       <CustomTypography type="title">
         Статистика в текущем сезоне:
       </CustomTypography>

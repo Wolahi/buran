@@ -2,8 +2,8 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router";
 
 import { $api } from "@/shared/api/apiInstance.ts";
-import { IPlayerSimpleOutput } from "@/shared/config/interfaces/IPlayerSimpleOutput";
 import { IActions } from "@/shared/config/interfaces/IActions";
+import { IPlayerSimpleOutput } from "@/shared/config/interfaces/IPlayerSimpleOutput";
 
 const useGetBestPlayer = () => {
   const { id } = useParams();
