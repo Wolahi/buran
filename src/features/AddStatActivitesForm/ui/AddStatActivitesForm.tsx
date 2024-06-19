@@ -2,13 +2,15 @@ import { Controller, useForm } from "react-hook-form";
 import { Button, Drawer, Input } from "antd";
 import dayjs from "dayjs";
 
+import useAddsStatsActivities from "../module/useAddsStatsActivities";
+
+import { IAddStatsActivitiesForm } from "./interfaces/IAddStatsActivitiesForm";
+import { IAddStatsActivitiesInput } from "./interfaces/IAddStatsActivitiesInput";
+import { IDrawerStatsActivitiesProps } from "./interfaces/IDrawerStatsActivitiesProps";
+
 import styles from "./AddStatActivitesForm.module.scss";
 
 import { CustomTypography } from "@/shared/ui/CustomTypography";
-import { IDrawerStatsActivitiesProps } from "./interfaces/IDrawerStatsActivitiesProps";
-import { IAddStatsActivitiesForm } from "./interfaces/IAddStatsActivitiesForm";
-import { IAddStatsActivitiesInput } from "./interfaces/IAddStatsActivitiesInput";
-import useAddsStatsActivities from "../module/useAddsStatsActivities";
 
 dayjs.locale("ru");
 
@@ -32,14 +34,8 @@ const AddStatsActivitesForm = ({
   };
 
   return (
-    <Drawer
-      open={open}
-      onClose={onClose}
-    >
-      <form
-        className={styles.root}
-        onSubmit={handleSubmit(onSubmit)}
-      >
+    <Drawer open={open} onClose={onClose}>
+      <form className={styles.root} onSubmit={handleSubmit(onSubmit)}>
         <CustomTypography type="textM">Обновление статистики</CustomTypography>
         <Controller
           control={control}
@@ -49,10 +45,7 @@ const AddStatsActivitesForm = ({
               <CustomTypography type="subtitle">
                 Номер в турнирной таблице
               </CustomTypography>
-              <Input
-                type="number"
-                {...field}
-              />
+              <Input type="number" {...field} />
             </div>
           )}
         />
@@ -62,10 +55,7 @@ const AddStatsActivitesForm = ({
           render={({ field }) => (
             <div className={styles.items}>
               <CustomTypography type="subtitle">Кол-во игр</CustomTypography>
-              <Input
-                type="number"
-                {...field}
-              />
+              <Input type="number" {...field} />
             </div>
           )}
         />
@@ -77,10 +67,7 @@ const AddStatsActivitesForm = ({
               <CustomTypography type="subtitle">
                 Кол-во выиграннных игр
               </CustomTypography>
-              <Input
-                type="number"
-                {...field}
-              />
+              <Input type="number" {...field} />
             </div>
           )}
         />
@@ -92,10 +79,7 @@ const AddStatsActivitesForm = ({
               <CustomTypography type="subtitle">
                 Кол-во выигранных овертаймов
               </CustomTypography>
-              <Input
-                type="number"
-                {...field}
-              />
+              <Input type="number" {...field} />
             </div>
           )}
         />
@@ -105,12 +89,9 @@ const AddStatsActivitesForm = ({
           render={({ field }) => (
             <div className={styles.items}>
               <CustomTypography type="subtitle">
-                Кол-во выигранныхм буллитов
+                Кол-во выигранных буллитов
               </CustomTypography>
-              <Input
-                type="number"
-                {...field}
-              />
+              <Input type="number" {...field} />
             </div>
           )}
         />
@@ -120,12 +101,9 @@ const AddStatsActivitesForm = ({
           render={({ field }) => (
             <div className={styles.items}>
               <CustomTypography type="subtitle">
-                Кол-во проигранныхъ буллитов
+                Кол-во проигранных буллитов
               </CustomTypography>
-              <Input
-                type="number"
-                {...field}
-              />
+              <Input type="number" {...field} />
             </div>
           )}
         />
@@ -137,10 +115,7 @@ const AddStatsActivitesForm = ({
               <CustomTypography type="subtitle">
                 Кол-во проигранных овертаймов
               </CustomTypography>
-              <Input
-                type="number"
-                {...field}
-              />
+              <Input type="number" {...field} />
             </div>
           )}
         />
@@ -152,10 +127,7 @@ const AddStatsActivitesForm = ({
               <CustomTypography type="subtitle">
                 Кол-во проигранных матчей
               </CustomTypography>
-              <Input
-                type="number"
-                {...field}
-              />
+              <Input type="number" {...field} />
             </div>
           )}
         />
@@ -175,10 +147,7 @@ const AddStatsActivitesForm = ({
           render={({ field }) => (
             <div className={styles.items}>
               <CustomTypography type="subtitle">O</CustomTypography>
-              <Input
-                type="number"
-                {...field}
-              />
+              <Input type="number" {...field} />
             </div>
           )}
         />
@@ -188,17 +157,11 @@ const AddStatsActivitesForm = ({
           render={({ field }) => (
             <div className={styles.items}>
               <CustomTypography type="subtitle">% очков</CustomTypography>
-              <Input
-                type="number"
-                {...field}
-              />
+              <Input type="number" {...field} />
             </div>
           )}
         />
-        <Button
-          type="primary"
-          htmlType="submit"
-        >
+        <Button type="primary" htmlType="submit">
           Обновить
         </Button>
       </form>

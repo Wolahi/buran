@@ -1,10 +1,12 @@
-import styles from "./CommandsStats.module.scss";
-
-import { FloatButton, Table, type TableProps } from "antd";
-import { CommandsStatsProps } from "./interfaces/CommandsStatsProps";
-import { useAuthContext } from "@/app/module/hooks/useAuthContext";
 import { useState } from "react";
 import { PlusOutlined } from "@ant-design/icons";
+import { FloatButton, Table, type TableProps } from "antd";
+
+import { CommandsStatsProps } from "./interfaces/CommandsStatsProps";
+
+import styles from "./CommandsStats.module.scss";
+
+import { useAuthContext } from "@/app/module/hooks/useAuthContext";
 import AddStatsActivitesForm from "@/features/AddStatActivitesForm/ui/AddStatActivitesForm";
 
 const columns: TableProps["columns"] = [
@@ -22,25 +24,25 @@ const columns: TableProps["columns"] = [
   },
   {
     key: "v",
-    title: "Выйгранные",
+    title: "Выигранные",
     dataIndex: "v",
     render: (val) => <span className={styles.CommandsStat__text}>{val}</span>,
   },
   {
     key: "vo",
-    title: "Выйгранные овертайм",
+    title: "Выигранные овертаймы",
     dataIndex: "vo",
     render: (val) => <span className={styles.CommandsStat__text}>{val}</span>,
   },
   {
     key: "vb",
-    title: "Выйгранные буллеты",
+    title: "Выигранные буллиты",
     dataIndex: "vb",
     render: (val) => <span className={styles.CommandsStat__text}>{val}</span>,
   },
   {
     key: "pb",
-    title: "Проигранные буллеты",
+    title: "Проигранные буллиты",
     dataIndex: "pb",
     render: (val) => <span className={styles.CommandsStat__text}>{val}</span>,
   },
@@ -94,12 +96,7 @@ const CommandsStats = ({
         className={styles.CommandsStat}
       />
       {isAuth && (
-        <>
-          <FloatButton
-            icon={<PlusOutlined />}
-            onClick={() => setOpen(true)}
-          />
-        </>
+        <FloatButton icon={<PlusOutlined />} onClick={() => setOpen(true)} />
       )}
       <AddStatsActivitesForm
         setCommandsStats={setCommandsStats}

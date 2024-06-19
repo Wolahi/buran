@@ -162,7 +162,7 @@ const AddPlayerForm = ({
         />
 
         <Button type="primary" htmlType="submit">
-          {player ? "Обноваить" : "Создать"}
+          {player ? "Обновить" : "Создать"}
         </Button>
       </form>
     </Drawer>

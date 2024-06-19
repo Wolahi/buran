@@ -1,17 +1,19 @@
 import { Controller, useForm } from "react-hook-form";
+import { useParams } from "react-router";
 import { Button, DatePicker, Drawer, Input, Select } from "antd";
 import dayjs from "dayjs";
 
+import useAddMatch from "../module/useMatchSeason";
+
+import { IAddMatchForm } from "./interfaces/IAddMatchForm";
+import { IAddMatchInput } from "./interfaces/IAddMatchInput";
+import { IDrawerMatchProps } from "./interfaces/IDrawerMatchProps";
+
 import styles from "./AddMatchForm.module.scss";
 
-import { CustomTypography } from "@/shared/ui/CustomTypography";
-import { IDrawerMatchProps } from "./interfaces/IDrawerMatchProps";
-import { IAddMatchForm } from "./interfaces/IAddMatchForm";
-import useAddMatch from "../module/useMatchSeason";
 import { IMatchInfo } from "@/shared/config/interfaces/IMatchInfo";
-import { IAddMatchInput } from "./interfaces/IAddMatchInput";
+import { CustomTypography } from "@/shared/ui/CustomTypography";
 import useGetCommands from "@/widgets/CommandPlayers/module/useGetCommands";
-import { useParams } from "react-router";
 
 dayjs.locale("ru");
 
@@ -35,14 +37,8 @@ const AddMatchForm = ({ open, onClose, setMatch }: IDrawerMatchProps) => {
   };
 
   return (
-    <Drawer
-      open={open}
-      onClose={onClose}
-    >
-      <form
-        className={styles.root}
-        onSubmit={handleSubmit(onSubmit)}
-      >
+    <Drawer open={open} onClose={onClose}>
+      <form className={styles.root} onSubmit={handleSubmit(onSubmit)}>
         <CustomTypography type="textM">Создание матча</CustomTypography>
         <Controller
           control={control}
@@ -50,7 +46,7 @@ const AddMatchForm = ({ open, onClose, setMatch }: IDrawerMatchProps) => {
           render={({ field }) => (
             <div className={styles.items}>
               <CustomTypography type="subtitle">
-                Название вражеской команды
+                Команда соперника
               </CustomTypography>
               <Input {...field} />
             </div>
@@ -84,18 +80,12 @@ const AddMatchForm = ({ open, onClose, setMatch }: IDrawerMatchProps) => {
           render={({ field }) => (
             <div className={styles.items}>
               <CustomTypography type="subtitle">Дата матча</CustomTypography>
-              <DatePicker
-                showTime
-                {...field}
-              />
+              <DatePicker showTime {...field} />
             </div>
           )}
         />
 
-        <Button
-          type="primary"
-          htmlType="submit"
-        >
+        <Button type="primary" htmlType="submit">
           Добавить
         </Button>
       </form>
