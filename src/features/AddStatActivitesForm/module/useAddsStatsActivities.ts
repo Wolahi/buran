@@ -1,9 +1,10 @@
+import { useParams } from "react-router";
 import { AxiosResponse } from "axios";
 
-import { $api } from "@/shared/api/apiInstance.ts";
 import { IAddStatsActivitiesInput } from "../ui/interfaces/IAddStatsActivitiesInput";
+
+import { $api } from "@/shared/api/apiInstance.ts";
 import { ICommandStats } from "@/shared/config/interfaces/ICommandStats";
-import { useParams } from "react-router";
 
 const useAddsStatsActivities = () => {
   const { id } = useParams();

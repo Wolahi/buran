@@ -63,7 +63,13 @@ const AddMatchActivitesForm = ({
                 <div>Буран</div>
                 <div>{match.enemy}</div>
               </CustomTypography>
-              <Switch {...field} onChange={() => setIsBuran(!isBuran)} />
+              <Switch
+                {...field}
+                onChange={(checked) => {
+                  field.onChange(checked);
+                  setIsBuran(!isBuran);
+                }}
+              />
             </div>
           )}
         />
