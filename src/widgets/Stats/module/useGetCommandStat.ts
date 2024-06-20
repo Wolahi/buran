@@ -11,7 +11,9 @@ const useGetCommandStat = () => {
 
   useEffect(() => {
     (async () => {
-      const res = await $api.get(`/api/seasons/stats/statsTable`);
+      const res = await $api.get(`/api/seasons/stats/statsTable`, {
+        params: { season: id },
+      });
       setCommandsStats(res.data);
     })();
   }, [id]);
